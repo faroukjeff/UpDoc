@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Updoc</title>
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag 'style', media: 'all', 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag 'bootstrap.min', media: 'all', 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag 'font-awesome.min', media: 'all', 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag 'overwrite', media: 'all', 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag 'animate.min', media: 'all', 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag 'animate', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+<%= yield %>
+
+</body>
+</html>
