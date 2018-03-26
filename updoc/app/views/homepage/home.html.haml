@@ -32,26 +32,26 @@
       .container
         .row
           .col-md-4.wow.fadeInRight{"data-wow-delay" => "0.3s", "data-wow-offset" => "0"}
-            .text-center{:onclick => "showpharmacies()"}
+            .text-center
               .hi-icon-wrap.hi-icon-effect
                 %i.fa.fa-medkit
                 %h4 Nearby Pharmacies
           .col-md-4.wow.fadeInRight{"data-wow-delay" => "0.3s", "data-wow-offset" => "0"}
-            .text-center{:onclick => "showhospitals()"}
+            .text-center
               .hi-icon-wrap.hi-icon-effect
                 %i.fa.fa-plus-square
                 %h4 Nearby Hospitals
                 
           .col-md-4.wow.fadeInLeft{"data-wow-delay" => "0.3s", "data-wow-offset" => "0"}
-            .text-center{:onclick => "showemergency()"}
+            .text-center
               .hi-icon-wrap.hi-icon-effect
                 %i.fa.fa-ambulance
                 %h4 Emergency Contact Numbers
           
-    #medicals{:style =>"height:100px;width:100%;display:none;background-color:white;"}
+    #medicals
       %table.col-md-4
-    #hospitals.col-md-4{:style =>"height:100px;width:100%;display:none;background-color:white;"}
-      %table{:style => "border:1px,solid;"}
+    #hospitals
+      %table.col-md-4{:style => "border:1px,solid;"}
         %thead
           %tr
             %th Name
@@ -62,9 +62,7 @@
             %tr
               %td= hospital.name 
               %td= hospital.street
-              %td= hospital.city
-    #emergency{:style =>"height:100px;width:100%;display:none;background-color:white;"}
-      %p Emergency Contact No:- +1 607 2324639
+              %td= hospital.city            
     %footer
       .social-icon
         .container
@@ -75,23 +73,9 @@
           = succeed "." do
             %a UpDoc    
             %p All Rights Reserved.    
-  :javascript
-    function  showpharmacies(){
-        document.getElementById("hospitals").style.display = "none";
-        document.getElementById("emergency").style.display = "none";
-        document.getElementById("medicals").style.display = "";
-    }
-
-    
-    function  showhospitals(){
-        document.getElementById("hospitals").style.display = "";
-        document.getElementById("medicals").style.display = "none";
-        document.getElementById("emergency").style.display = "none";
-    }
-    
-    function  showemergency(){
-        document.getElementById("hospitals").style.display = "none";
-        document.getElementById("medicals").style.display = "none";
-        document.getElementById("emergency").style.display = "";
-    }
-
+    -#:javascript
+    -#  wow = new WOW(
+    -#   {
+      
+    -#   }	) 
+    -# .init();
