@@ -43,14 +43,14 @@
                 %h4 Nearby Hospitals
                 
           .col-md-4.wow.fadeInLeft{"data-wow-delay" => "0.3s", "data-wow-offset" => "0"}
-            .text-center
+            .text-center{:onclick => "showemergency()"}
               .hi-icon-wrap.hi-icon-effect
                 %i.fa.fa-ambulance
                 %h4 Emergency Contact Numbers
           
-    #medicals{:style =>"height:100px;display:none;"}
+    #medicals{:style =>"height:100px;width:100%;display:none;background-color:white;"}
       %table.col-md-4
-    #hospitals.col-md-4{:style =>"height:100px;display:none;"}
+    #hospitals.col-md-4{:style =>"height:100px;width:100%;display:none;background-color:white;"}
       %table{:style => "border:1px,solid;"}
         %thead
           %tr
@@ -62,7 +62,9 @@
             %tr
               %td= hospital.name 
               %td= hospital.street
-              %td= hospital.city            
+              %td= hospital.city
+    #emergency{:style =>"height:100px;width:100%;display:none;background-color:white;"}
+      %p Emergency Contact No:- +1 607 2324639
     %footer
       .social-icon
         .container
@@ -76,6 +78,7 @@
   :javascript
     function  showpharmacies(){
         document.getElementById("hospitals").style.display = "none";
+        document.getElementById("emergency").style.display = "none";
         document.getElementById("medicals").style.display = "";
     }
 
@@ -83,5 +86,12 @@
     function  showhospitals(){
         document.getElementById("hospitals").style.display = "";
         document.getElementById("medicals").style.display = "none";
+        document.getElementById("emergency").style.display = "none";
+    }
+    
+    function  showemergency(){
+        document.getElementById("hospitals").style.display = "none";
+        document.getElementById("medicals").style.display = "none";
+        document.getElementById("emergency").style.display = "";
     }
 
