@@ -4,7 +4,6 @@ hospitals = [{:name=> 'Lourd', :pnumber=> '6072386492', :city=> 'Binghamton', :s
   	 ]
   	 
 
-
 hospitals.each do |hospital|
   Hospital.create!(hospital)
 end
