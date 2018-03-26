@@ -32,12 +32,12 @@
       .container
         .row
           .col-md-4.wow.fadeInRight{"data-wow-delay" => "0.3s", "data-wow-offset" => "0"}
-            .text-center
+            .text-center{:onclick => "showpharmacies()"}
               .hi-icon-wrap.hi-icon-effect
                 %i.fa.fa-medkit
                 %h4 Nearby Pharmacies
           .col-md-4.wow.fadeInRight{"data-wow-delay" => "0.3s", "data-wow-offset" => "0"}
-            .text-center
+            .text-center{:onclick => "showhospitals()"}
               .hi-icon-wrap.hi-icon-effect
                 %i.fa.fa-plus-square
                 %h4 Nearby Hospitals
@@ -46,11 +46,11 @@
             .text-center
               .hi-icon-wrap.hi-icon-effect
                 %i.fa.fa-ambulance
-                %h4 Emergency Contact Numbers
-    #medicals
+                %h4 Emergency Contact Numbers 
+    #medicals{:style =>"height:100px;display:none;"}
       %table.col-md-4
-    #hospitals
-      %table.col-md-4{:style => "border:1px,solid;"}
+    #hospitals.col-md-4{:style =>"height:100px;display:none;"}
+      %table{:style => "border:1px,solid;"}
         %thead
           %tr
             %th Name
@@ -72,9 +72,16 @@
           = succeed "." do
             %a UpDoc    
             %p All Rights Reserved.    
-    -#:javascript
-    -#  wow = new WOW(
-    -#   {
-      
-    -#   }	) 
-    -# .init();
+
+  :javascript
+    function  showpharmacies(){
+        document.getElementById("hospitals").style.display = "none";
+        document.getElementById("medicals").style.display = "";
+    }
+
+    
+    function  showhospitals(){
+        document.getElementById("hospitals").style.display = "";
+        document.getElementById("medicals").style.display = "none";
+    }
+
