@@ -48,10 +48,21 @@
                 %i.fa.fa-ambulance
                 %h4 Emergency Contact Numbers
           
-    #medicals{:style =>"height:100px;width:100%;display:none;background-color:white;"}
-      %table.col-md-4
-    #hospitals.col-md-4{:style =>"height:100px;width:100%;display:none;background-color:white;"}
-      %table{:style => "border:1px,solid;"}
+    #medicals{:style =>"height:200px;width:100%;display:none;background-color:white;"}
+      %table{:style => "border:1px,solid;width:80%"}
+        %thead
+          %tr
+            %th Name
+            %th Street
+            %th City
+        %tbody
+          - @Pharmacys.each do |pharmacy|
+            %tr
+              %td= pharmacy.name 
+              %td= pharmacy.street
+              %td= pharmacy.city
+    #hospitals.col-md-4{:style =>"height:200px;width:100%;display:none;background-color:white;"}
+      %table{:style => "border:1px,solid;width:80%"}
         %thead
           %tr
             %th Name
@@ -63,7 +74,7 @@
               %td= hospital.name 
               %td= hospital.street
               %td= hospital.city
-    #emergency{:style =>"height:100px;width:100%;display:none;background-color:white;"}
+    #emergency{:style =>"height:200px;width:100%;display:none;background-color:white;"}
       %p Emergency Contact No:- +1 607 2324639
     %footer
       .social-icon
