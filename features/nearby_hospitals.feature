@@ -6,8 +6,8 @@ Feature: find nearby hospitals
   
 Scenario: default
   Given I am on the home page
-  And I should see "Nearby Hospitals"
-  Then I click on "Nearby Hospitals"
-  Then I should see "Lourd"
-  And I should see "Vestal Hospital"
-  And I should see "University Hospital"
+  And I see Nearby Hospitals
+  #When I follow Nearby Hospitals
+  Then I should see Lourd
+  And I should see Vestal Hospital
+  And I should see University Hospital

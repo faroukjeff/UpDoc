@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
   
+  get 'sessions/new'
+
   resources :hospitals
   resources :credentials
   
@@ -13,7 +15,9 @@ Rails.application.routes.draw do
             only:       [:new, :create]
 
   #get "contact-us" => "contact_us/contacts#new", as: :contact_us
-  
+  get    '/login',   to: 'sessions#new'
+  post   '/login',   to: 'sessions#create'
+  delete '/logout',  to: 'sessions#destroy'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
