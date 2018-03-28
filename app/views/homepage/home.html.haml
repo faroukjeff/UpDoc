@@ -38,10 +38,11 @@
                 %i.fa.fa-medkit
                 %h4 Nearby Pharmacies
           .col-md-4.wow.fadeInRight{"data-wow-delay" => "0.3s", "data-wow-offset" => "0"}
-            .text-center{:onclick => "showhospitals()"}
-              .hi-icon-wrap.hi-icon-effect
-                %i.fa.fa-plus-square
-                %h4 Nearby Hospitals
+            #hospital_div{:onclick => "showhospitals()"}
+              .text-center
+                .hi-icon-wrap.hi-icon-effect
+                  %i.fa.fa-plus-square
+                  %h4 Nearby Hospitals
                 
           .col-md-4.wow.fadeInLeft{"data-wow-delay" => "0.3s", "data-wow-offset" => "0"}
             .text-center{:onclick => "showemergency()"}
