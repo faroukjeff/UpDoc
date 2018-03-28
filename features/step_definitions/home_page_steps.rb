@@ -1,4 +1,4 @@
 
 When /^(?:|I )click on "([^"]*)"$/ do |link|
-  find('hopital_div').click
+  find('#hospital_div').click
 end
