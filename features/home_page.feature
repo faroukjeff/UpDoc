@@ -11,3 +11,4 @@ Scenario: default
   And I should see "Nearby Hospitals"
   And I should see "Nearby Pharmacies"
   And I should see "Emergency Contact Numbers"
+  And I should see "Jeff"
