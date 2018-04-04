@@ -12,7 +12,7 @@ Background: hospitals have been added to database
   | Vestal Hospital         | Park                | Vestal      |
   | University Hospital     | Vestal Parkway West | Binghamton  |
   
-Scenario: default, :js => true
+Scenario: default
   When I am on the home page
   Then I should see "Nearby Hospitals"
   When I click on "Nearby Hospitals"

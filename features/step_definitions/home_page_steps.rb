@@ -5,6 +5,12 @@ Given /the following hospitals exist/ do |hospitals|
     end
 end
 
+Given /the following pharmacies exist/ do |pharmacies|
+    pharmacies.hashes.each do |pharmacy|
+        Pharmacy.create!(pharmacy)
+    end
+end
+
 #find(:css, '#hospital_div').should be_visible
 #find('#hospital_div').click()
   
