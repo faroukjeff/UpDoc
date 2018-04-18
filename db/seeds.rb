@@ -15,6 +15,7 @@ credentials = [{:username=> 'Aditya', :password=> 'Arsenal4'},
   	 
 
 hospitals.each do |hospital|
+
   Hospital.create!(hospital)
 end
 
