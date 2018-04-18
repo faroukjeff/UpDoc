@@ -8,3 +8,6 @@
       = f.label :password
       = f.password_field :password, class: 'form-control'
       = f.submit "Log in", class: "btn btn-primary"
+      %br= link_to 'Sign Up', signup_signup_path()
+      %br= link_to 'Forgot Password?', forgotpass_forgotpass_path()
+      = flash[:notice]

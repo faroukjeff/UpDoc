@@ -6,7 +6,9 @@ Rails.application.routes.draw do
   resources :credentials
   
   get "homepage/home"
+  get "sessions/show"
   get "signup/signup"
+  get "forgotpass/forgotpass"
   root "homepage#home"
   
 
@@ -14,9 +16,9 @@ Rails.application.routes.draw do
             controller: "contact_us/contacts",
             only:       [:new, :create]
 
-  #get "contact-us" => "contact_us/contacts#new", as: :contact_us
+  get "contact-us" => "contact_us/contacts#new", as: :contact_us1
   get    '/login',   to: 'sessions#new'
-  post   '/login',   to: 'sessions#create'
+  post   '/login',   to: 'sessions#show'
   delete '/logout',  to: 'sessions#destroy'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
