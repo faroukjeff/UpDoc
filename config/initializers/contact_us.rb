@@ -26,6 +26,6 @@ ContactUs.setup do |config|
 
 
   # Configure the redirect URL after a successful submission
-  config.success_redirect = '/home'
+  config.success_redirect = '/'
 
 end

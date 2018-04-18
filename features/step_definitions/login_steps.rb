@@ -3,13 +3,23 @@ And /I have entered (in)?valid credentials/ do |invalid|
     #pword = /[^A-Za-z0-9]+/
     if invalid
         uname = "example@email"
-        pword = ""
+        pword = "abc"
     else
-        uname = "Aditya"
+        uname = "Aditya@bin.com"
         pword = "Arsenal4"
     end
-    steps %Q{I fill in email_field with "#{uname}"}
-    steps %Q{I fill in password_field with "#{pword}"}
-    #fill username field w uname
-    #fill password field w pword
+    
+    fill_in "Username", :with => uname
+    fill_in "Password", :with => pword
+
+
+
 end
+
+Given /the following credentials exist/ do |credentials|
+    credentials.hashes.each do |cred|
+        Credential.create!(cred)
+    end
+end
+
+
