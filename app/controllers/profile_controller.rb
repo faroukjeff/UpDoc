@@ -5,7 +5,9 @@ def profile_params
 end
 
  def doctorprofile
-   @data = params[:params1]
+   data = params[:params1]
+   @user = Profile.where(:username => data)
+   @data = Profile.where(:docid => data)
  end
 
 

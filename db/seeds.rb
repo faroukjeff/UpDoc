@@ -14,7 +14,15 @@ credentials = [{:username=> 'Aditya@bin.com', :password=> 'Arsenal4', :usertype=
     	  {:username=> 'John@bon.com', :password=> 'John19', :usertype=> 'P'},
     	  {:username=> 'Alice@bon.com', :password=> 'Alice119', :usertype=> 'D'}
   	 ]
-  	 
+
+
+
+profiles = [{:username=> "Jeff@bin.com",:first_name=>"Jeff",:last_name_string=>"Baker",:address=>"198 Main Street, Binghamton NY",:pnumber=>"P0342567",:Healthcare=>"Geo Blue",:password=>"Realmadrid1",:docid=>"Aditya@bin.com"},
+            {:username=> "Joe@bon.com",:first_name=>"Joe",:last_name_string=>"Williams",:address=>"22 Main Street, Binghamton NY",:pnumber=>"P0342896",:Healthcare=>"United Healthcare",:password=>"Mufc19",:docid=>"Aditya@bin.com"},
+            {:username=> "John@bon.com",:first_name=>"John",:last_name_string=>"Kent",:address=>"45 Chapin Street, Binghamton NY",:pnumber=>"P0895642",:Healthcare=>"United Healthcare",:password=>"John19",:docid=>"Alice@bon.com"},
+            {:username=> "Aditya@bin.com",:first_name=>"Aditya",:last_name_string=>"Dere",:address=>"144 Edward Street, Binghamton NY",:pnumber=>"D0445687",:password=>"Arsenal4"},
+            {:username=> "Alice@bon.com",:first_name=>"Alice",:last_name_string=>"Lane",:address=>"74 Edward Street, Binghamton NY",:pnumber=>"D04489756",:password=>"Alice119"}
+            ]  	 
 
 hospitals.each do |hospital|
   Hospital.create!(hospital)
@@ -26,4 +34,8 @@ end
 
 credentials.each do |credential|
  Credential.create!(credential)
+end
+
+profiles.each do |profiles|
+ Profile.create!(profiles)
 end

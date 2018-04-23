@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180422183914) do
+ActiveRecord::Schema.define(version: 20180423003040) do
 
   create_table "credentials", force: :cascade do |t|
     t.string   "username"
@@ -47,6 +47,7 @@ ActiveRecord::Schema.define(version: 20180422183914) do
     t.string "pnumber"
     t.string "Healthcare"
     t.string "password"
+    t.string "docid"
   end
 
 end
