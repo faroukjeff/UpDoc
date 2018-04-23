@@ -8,9 +8,11 @@ pharmacies = [{:name=> 'Ab Pharma', :pnumber=> '12345678', :city=> 'Binghamton',
     	  {:name=> 'University Pharmacy', :pnumber=> '607125986', :city=> 'Binghamton', :street=> 'Vestal Parkway West', :hnumber=> 56}
   	 ]
   	 
-credentials = [{:username=> 'Aditya@bin.com', :password=> 'Arsenal4'},
-    	  {:username=> 'Jeff@bin.com', :password=> 'Realmadrid1'},
-    	  {:username=> 'Joe@bon.com', :password=> 'Mufc19'}
+credentials = [{:username=> 'Aditya@bin.com', :password=> 'Arsenal4', :usertype=> 'D'},
+    	  {:username=> 'Jeff@bin.com', :password=> 'Realmadrid1', :usertype=>'P'},
+    	  {:username=> 'Joe@bon.com', :password=> 'Mufc19', :usertype=> 'P'},
+    	  {:username=> 'John@bon.com', :password=> 'John19', :usertype=> 'P'},
+    	  {:username=> 'Alice@bon.com', :password=> 'Alice119', :usertype=> 'D'}
   	 ]
   	 
 

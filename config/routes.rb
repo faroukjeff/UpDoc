@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   
   get "homepage/home"
   get "sessions/show"
+  get "profile/doctorprofile"
   get "signup/signup"
   get "forgotpass/forgotpass"
   root "homepage#home"
