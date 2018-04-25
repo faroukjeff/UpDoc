@@ -7,6 +7,9 @@ Rails.application.routes.draw do
   
   get "homepage/home"
   get "sessions/show"
+  get "profile/doctorprofile"
+  get "profile/medicalrecords"
+  get "profile/searchpatients"
   get "signup/signup"
   get "forgotpass/forgotpass"
   root "homepage#home"
@@ -15,7 +18,8 @@ Rails.application.routes.draw do
   resources :contacts,
             controller: "contact_us/contacts",
             only:       [:new, :create]
-
+            
+  get "contact_usd" => "contact_us/contact_mailer#contact_email"
   get "contact-us" => "contact_us/contacts#new", as: :contact_us1
   get    '/login',   to: 'sessions#new'
   post   '/login',   to: 'sessions#show'

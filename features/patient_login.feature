@@ -7,8 +7,7 @@ Feature: login
 Background: credentials have been added to database
 
   Given the following credentials exist:
-  | username          | password    |      
-  | Aditya@bin.com    | Arsenal4    |   
+  | username          | password    |
   | Jeff@bin.com      | Realmadrid1 |          
   | Joe@bon.com       | Mufc19      |
   
@@ -21,14 +20,14 @@ Scenario:
 
 Scenario:
   Given I am on the login page
-  And I have entered valid credentials
+  And I have entered valid credential
   When I press "Log in"
   Then I should be on the profile page
   And I should see "Login successful"
 
 Scenario:
   Given I am on the login page
-  And I have entered invalid credentials
+  And I have entered invalid credential
   When I press "Log in"
   Then I should see "Wrong username/password"
   And I should see "Forgot Password?"

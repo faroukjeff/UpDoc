@@ -18,7 +18,10 @@ module NavigationHelpers
       
    when /^the profile\s?page$/
       '/login'
-
+      
+    when /^the doctor profile\s?page$/
+      '/profile/doctorprofile'  
+   
     #when /^the profile page$/ then '/login'
     # Add more mappings here.
     # Here is an example that pulls values out of the Regexp:

@@ -1,13 +1,47 @@
 - provide(:title, "Login")
-%h1 Login
-.row
-  .col-md-6.col-md-offset-3
-    = form_for(:session, url: login_path) do |f|
-      = f.label :username
-      = f.email_field :username, class: 'form-control'
-      = f.label :password
-      = f.password_field :password, class: 'form-control'
-      = f.submit "Log in", class: "btn btn-primary"
-      %br= link_to 'Sign Up', signup_signup_path()
-      %br= link_to 'Forgot Password?', forgotpass_forgotpass_path()
+%html{:lang => "en"}
+  %head
+    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+    %title Profile Page
+  %body{:style=>"background-color:#CCB"}
+    %header#header
+      %nav.navbar.navbar-fixed-top
+        .container
+          .navbar-header
+            %button.navbar-toggle{"data-target" => ".navbar-collapse", "data-toggle" => "collapse", :type => "button"}
+              %span.sr-only
+              %span.icon-bar
+              %span.icon-bar
+              %span.icon-bar
+            -#%a.navbar-brand{:href => "home.html.haml"} UpDoc
+            
+            #imagebox 
+              = link_to image_tag("Logo.png", :style => "height:65px;"), homepage_home_path(:refresh => 'refresh')
+          .collapse.navbar-collapse.navbar-right
+            %ul.nav.navbar-nav
+              %li
+                = link_to 'Home', homepage_home_path(:refresh => 'refresh')
+              %li
+                = link_to 'Sign Up', signup_signup_path()
+              %li
+                %a= link_to 'Login', login_path()
+              %li
+                = link_to 'Contact Us', contact_us_path()
+  
+  .row{:style=>"background-color:white;position:relative;top:120px;"}
+    .col-md-12{:style=>"font-size:30px;padding:20px;"} Login
+    .col-md-6.col-md-offset-3{:style=>"font-size:18px;color:red;padding-bottom:15px"}
       = flash[:notice]
+    .col-md-6.col-md-offset-3
+      
+      = form_for(:session, url: login_path) do |f|
+        
+        = f.label :username
+        = f.email_field :username, class: 'form-control'
+        = f.label :password
+        = f.password_field :password, class: 'form-control'
+        = f.submit "Log in", class: "btn btn-primary"
+        /%br= link_to 'Login Bis', profile_doctorprofile_path(:params1=> data1["username"])
+        %br= link_to 'Sign Up', signup_signup_path()
+        %br= link_to 'Forgot Password?', forgotpass_forgotpass_path()
+        
