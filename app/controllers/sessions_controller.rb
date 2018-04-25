@@ -14,7 +14,7 @@ class SessionsController < ApplicationController
     password = id["password"]
     data = Credential.where(:username => checkid , :password => password)
     
-    p data
+    #p data
      
     
     if(data == [])

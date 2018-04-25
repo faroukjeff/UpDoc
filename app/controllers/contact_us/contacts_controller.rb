@@ -14,6 +14,7 @@ class ContactUs::ContactsController < ApplicationController
   def new
     @contact = ContactUs::Contact.new
     render_new_page
+    p @contact
   end
 
   protected
