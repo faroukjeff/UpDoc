@@ -9,4 +9,18 @@ RSpec.describe SessionsController, type: :controller do
     end
   end
 
+  describe "doctor log in" do
+    it "is unsuccessful" do
+      post :show, {:session => {:username => 'email@bin.com', :password => 'invalid'} }
+      expect(response).to redirect_to('/login')
+    end
+    it "is successful" do
+      @cred = {:username => 'Aditya@bin.com', :password => 'Arsenal4', :usertype => "D"}
+      Credential.create!(@cred)
+      post :show, {:session => @cred }
+      #expect(page.body).to match("Your Profile")
+      expect(response).to redirect_to(profile_doctorprofile_path(:params1 => 'Aditya@bin.com'))
+    end
+  end
+
 end
