@@ -13,6 +13,7 @@ end
  def medicalrecords
      id = params[:pnumber]
      p id
+     @meddata = MedicalRecord.where(:pnumber=>id)
  end    
  
  def searchpatients

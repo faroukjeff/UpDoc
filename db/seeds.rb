@@ -32,6 +32,11 @@ profiles = [{:username=> "Jeff@bin.com",:first_name=>"Jeff",:last_name_string=>"
             {:username=> "Alice@bon.com",:first_name=>"Alice",:last_name_string=>"Lane",:address=>"74 Edward Street, Binghamton NY",:pnumber=>"D04489756",:password=>"Alice119"}
            
             ]  	 
+            
+medrecords = [{:pnumber=>"P0342567",:name=>"Jeff Baker",:address=>"198 Main Street, Binghamton NY",:healthcare=>"Geo Blue",:medhistory=>"High Blood Pressure,Diabetes,Diarrhea"},
+             {:pnumber=>"P0342896",:name=>"Joe Williams",:address=>"22 Main Street, Binghamton NY",:healthcare=>"United Healthcare",:medhistory=>"Back Pain,Kidney Stones,Diarrhea"},
+             {:pnumber=>"P0895648",:name=>"Rohit R",:address=>"145 Chapin Street, NJ",:healthcare=>"United Healthcare",:medhistory=>"Chest Pain,Heart Disease"}
+             ]            
 
 hospitals.each do |hospital|
   Hospital.create!(hospital)
@@ -47,4 +52,8 @@ end
 
 profiles.each do |profiles|
  Profile.create!(profiles)
+end
+
+medrecords.each do |medrecord|
+ MedicalRecord.create!(medrecord)
 end

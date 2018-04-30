@@ -1,3 +1,42 @@
-%h1 Sign Up page (Work In Progress)
+%h1 Sign Up page 
 
- 
+%head 
+  %form{:style => "text-align:center"}
+    = label :user, :firstname, "First Name"
+    = text_field :user, :firstname
+    %br
+    = label :user, :lastname, "Last Name"
+    = text_field :user, :lastname
+    %br
+    = label :user, :email, "Email"
+    = text_field :user, :email
+    %br
+    = label :user, :pnumber, "Phone Number"
+    = text_field :user, :pnumber
+    %br
+    =label :user, :insurance, "Health Insurance"
+    %select
+      %option{:value => "unitedhealth"} Unitedhealth
+      %option{:value => "wellpoint"} Wellpoint Inc.
+      %option{:value => "kaisar"} Kaisar Foundation
+      %option{:value => "humana"} Humana
+      %option{:value => "aetna"} Aetna
+      %option{:value => "HCSC"} HCSC
+      %option{:value => "cigna"} Cigna
+      %option{:value => "highmark"} Highmark
+      %option{:value => "coventry"} Coventry Corp.
+      %option{:value => "HIP"} HIP
+      %option{:value => "other"} Other
+    %br
+    = label :user, :other, "If other, please specify your Health Insurance Company"
+    = text_field :user, :other
+    %br
+    = label :user, :password, "Password"
+    = text_field :user, :password
+    %br
+    = label :user, :confirmPassword, "Confirm Password"
+    = text_field :user, :confirmPassword
+    %br
+    
+    =link_to 'Sign Up', profile_doctorprofile_path()
+   
