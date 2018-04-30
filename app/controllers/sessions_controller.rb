@@ -13,7 +13,7 @@ class SessionsController < ApplicationController
     checkid = id["username"]
     password = id["password"]
     data = Credential.where(:username => checkid , :password => password)
-    
+    #byebug
     #p data
      
     
