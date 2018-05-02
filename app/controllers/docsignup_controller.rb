@@ -1,26 +1,26 @@
 class DocsignupController < ApplicationController
 
     def signup_params
-          params.require(:session).permit(:firstname,:lastname,:email, :address, :pnumber, :password, :confirmPassword)
+          params.require(:session).permit(:first_name,:last_name_string,:username, :address, :pnumber, :password, :confirmPassword)
     end
     
     def add
             id = params[:session]
-            @fName = id["firstname"]
-            @lName = id["lastname"]
-            @em = id["email"]
-            @addr = id["address"]
-            @docid = id["pnumber"]
-            @passw = id["password"]
-            @confirmpassw = id["confirmPassword"]
+            @first_name = id["first_name"]
+            @last_name_string = id["last_name_string"]
+            @username = id["username"]
+            @address = id["address"]
+            @pnumber = id["pnumber"]
+            @password = id["password"]
+            @confirmPassword = id["confirmPassword"]
             
-            isNull = true if(@fName == nil || @lName == nil || @em == nil || @addr == nil || @docid == nil || @passw == nil || @confirmpassw == nil)
+            isNull = true if(@first_name == nil || @last_name_string == nil || @username == nil || @address == nil || @pnumber == nil || @password == nil || @confirmPassword == nil)
             
-            flash[:notice] = "Passwords don't match" if(@passw != @confirmpassw)
-            flash[:notice] = "Fields cannot be null" if (isNull)
+            flash[:notice] = "Passwords don't match" and redirect_to admin_docsignup_path and return if(@password != @confirmPassword)
+            flash[:notice] = "Fields cannot be null" and redirect_to admin_docsignup_path and return if (isNull)
             
-            Profile.create!(:username => @em, :first_name => @fName, :last_name_string => @lName, :address => @addr, :pnumber => @docid, :password => @passw)
-            Credential.create!(:username => @em, :password=> @passw, :usertype=> 'D')
+            Profile.create!(:username => @username, :first_name => @first_name, :last_name_string => @last_name_string, :address => @address, :pnumber => @pnumber, :password => @password)
+            Credential.create!(:username => @username, :password=> @password, :usertype=> 'D')
     
             redirect_to admin_admin_path()
     end
