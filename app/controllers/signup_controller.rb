@@ -20,6 +20,7 @@ def add
         flash[:notice] = "Fields cannot be null" if (isNull)
         
         Profile.create!(:username => @em, :first_name => @fName, :last_name_string => @lName, :address => @addr, :Healthcare => @insur, :password => @passw)
+        Credential.create!(:username => @em, :password => @passw, :usertype => "P")
 
         redirect_to login_path() 
 end

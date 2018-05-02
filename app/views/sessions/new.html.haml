@@ -34,7 +34,7 @@
       = flash[:notice]
     .col-md-6.col-md-offset-3
       
-      = form_for(:session, url: login_path) do |f|
+      = form_for(:session, url: login_path , html: { id: "login" }) do |f|
         
         = f.label :username
         = f.email_field :username, class: 'form-control'
