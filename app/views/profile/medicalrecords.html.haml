@@ -1,1 +1,54 @@
-%h1 Medical Records (Work In progress)
+!!!
+%html{:lang => "en"}
+  %head
+    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+    %title Medical Reecords
+  %body{:style=>"background-color:#CCB"}
+    %header#header
+      %nav.navbar.navbar-fixed-top
+        .container
+          .navbar-header
+            %button.navbar-toggle{"data-target" => ".navbar-collapse", "data-toggle" => "collapse", :type => "button"}
+              %span.sr-only
+              %span.icon-bar
+              %span.icon-bar
+              %span.icon-bar
+            -#%a.navbar-brand{:href => "home.html.haml"} UpDoc
+            
+            #imagebox 
+              = link_to image_tag("Logo.png", :style => "height:65px;"), homepage_home_path(:refresh => 'refresh')
+          .collapse.navbar-collapse.navbar-right
+            %ul.nav.navbar-nav
+              %li
+                = link_to 'Home', homepage_home_path(:refresh => 'refresh')
+              %li
+                = link_to 'Sign Up', signup_signup_path()
+              %li
+                %a= link_to 'Log Out', login_path()
+              %li
+                = link_to 'Contact Us', contact_us_path()
+   
+    #profile{:style => "position:relative;top:130px;height:600px;background-color:white;"}
+      .col-md-12{:style =>"font-size:25px;text-align:center;padding:20px;position:relative;background-color:white;"}
+      #profilecard.col-md-4{:style=>"height:220px;background-color:white;border:1px solid;padding:15px;position:relative;left:50px;"}
+        #name{:style => "font-size:18px;padding:10px;"} Name : #{@meddata[0].name}
+        #address{:style => "font-size:18px;padding:10px;"} Address : #{@meddata[0].address} 
+        #Docid{:style => "font-size:18px;padding:10px;"} Patient Id : #{@meddata[0].pnumber} 
+      #profiledata.col-md-11{:style=>"position:relative;left:50px;padding-left:0px;"}  
+        #profiles.col-md-4{:style =>"height:250px;width:100%;background-color:white;border:1px solid;position:relative;top:25px;" }
+          #div1{:style=>"text-align:center;padding:10px;font-size:20px"} Medical History
+          %table{:style => "border:1px,solid;width:50%;margin: auto;padding:20px;"}
+            %thead
+              %tr
+                %th{:style => "border-bottom:1px solid;"}
+                %th{:style => "border-bottom:1px solid;"} 
+            %tbody
+            - @medrdata.each_with_index do |medata,index|
+              %tr
+                %td{:style => "background-color:white"}= medata
+                %td{:style => "background-color:white"}= check_box_tag(medata, value = "1", checked = (@medcheckbox[index]=="1"), options = {:disabled => true})
+                
+            
+                
+              
+              
