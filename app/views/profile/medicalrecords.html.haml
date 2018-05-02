@@ -24,7 +24,7 @@
               %li
                 = link_to 'Sign Up', signup_signup_path()
               %li
-                %a= link_to 'Login', login_path()
+                %a= link_to 'Log Out', login_path()
               %li
                 = link_to 'Contact Us', contact_us_path()
    
@@ -35,9 +35,20 @@
         #address{:style => "font-size:18px;padding:10px;"} Address : #{@meddata[0].address} 
         #Docid{:style => "font-size:18px;padding:10px;"} Doctor Id : #{@meddata[0].pnumber} 
       #profiledata.col-md-11{:style=>"position:relative;left:50px;padding-left:0px;"}  
-        #profiles.col-md-4{:style =>"height:150px;width:100%;background-color:white;border:1px solid;position:relative;top:25px;" }
+        #profiles.col-md-4{:style =>"height:250px;width:100%;background-color:white;border:1px solid;position:relative;top:25px;" }
           #div1{:style=>"text-align:center;padding:10px;font-size:20px"} Medical History
-          #{@meddata[0].medhistory}
+          %table{:style => "border:1px,solid;width:50%;margin: auto;padding:20px;"}
+            %thead
+              %tr
+                %th{:style => "border-bottom:1px solid;"}
+                %th{:style => "border-bottom:1px solid;"} 
+            %tbody
+            - @medrdata.each_with_index do |medata,index|
+              %tr
+                %td{:style => "background-color:white"}= medata
+                %td{:style => "background-color:white"}= check_box_tag(medata, value = "1", checked = (@medcheckbox[index]=="1"), options = {:disabled => true})
+                
+            
                 
               
               
