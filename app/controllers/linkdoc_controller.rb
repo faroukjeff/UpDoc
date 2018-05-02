@@ -13,7 +13,7 @@ class LinkdocController < ApplicationController
             patient.update(docid: @doc)
             redirect_to admin_admin_path
         else
-            flash.alert = "Invalid entry"
+            flash.notice = "Invalid entry"
             redirect_to admin_linkdoc_path
         end
         
