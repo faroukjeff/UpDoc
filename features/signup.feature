@@ -5,8 +5,8 @@ Scenario:
     When I follow "Sign Up"
     Then I should see "First Name"
     Then I should see "Last Name"
-    Then I should see "Phone Number"
-    Then I should see "Health Insurance"
+    Then I should see "Address"
+    Then I should see "Health Provider"
     
     
 Scenario:

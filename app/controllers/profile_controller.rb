@@ -12,12 +12,12 @@ end
  
  def medicalrecords
      id = params[:pnumber]
-     p id
+     
      @meddata = MedicalRecord.where(:pnumber=>id)
      @medrdata = @meddata[0].medhistory.split(",")
      @medcheckbox = @meddata[0].meddata.split(",")
-     p @medrdata
-     p @medcheckbox
+     #p @medrdata
+     #p @medcheckbox
  end    
  
  def searchpatients

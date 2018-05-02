@@ -42,3 +42,10 @@ Given /the following profiles exist/ do |profiles|
         Profile.create!(prof)
     end
 end
+
+
+Given /the following medical_records exist/ do |medicalrecords|
+    medicalrecords.hashes.each do |med|
+        MedicalRecord.create!(med)
+    end
+end
