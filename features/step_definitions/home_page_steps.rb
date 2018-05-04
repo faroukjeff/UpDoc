@@ -11,6 +11,12 @@ Given /the following pharmacies exist/ do |pharmacies|
     end
 end
 
+Given /the following medical records exist/ do |medrecords|
+    medrecords.hashes.each do |medrecord|
+        MedicalRecord.create!(medrecord)
+    end
+end
+
 #find(:css, '#hospital_div').should be_visible
 #find('#hospital_div').click()
   

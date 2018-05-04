@@ -11,9 +11,14 @@ Background: credentials have been added to database
   | Alice@bon.com     | Alice119    | D        |
   
     Given the following profiles exist:
-  | username          | password    | first_name |  last_name_string | address                         | pnumber  |
-  | Aditya@bin.com    | Arsenal4    | Aditya     |  Dere             | 144 Edward Street, Binghamton NY| D0445687 |
-  | Alice@bon.com     | Alice119    | Alice      |  Lane             | 74 Edward Street, Binghamton NY | D04489756|
+  | username          | password    | first_name |  last_name_string | address                         | pnumber  | docid         |
+  | Aditya@bin.com    | Arsenal4    | Aditya     |  Dere             | 144 Edward Street, Binghamton NY| D0445687 | nil |
+  | Alice@bon.com     | Alice119    | Alice      |  Lane             | 74 Edward Street, Binghamton NY | D04489756| nil |
+  | Jeff@bin.com      | Realmadrid1 | Jeff       |  Baker            | 198 Main Street, Binghamton NY  | P0342567 | Aditya@bin.com |
+
+  Given the following medical records exist:
+  | name       | address                         | pnumber  | healthcare | medhistory                                                    | meddata   |
+  | Jeff Baker | 198 Main Street, Binghamton NY  | P0342567 | Geo Blue   | High Blood Pressure,Diabetes,Diarrhea,Back Pain,Kidney Stones | 0,1,1,0,1 |
   
   
 
@@ -44,6 +49,19 @@ And I should see "Healthcare"
 And I should see "Pnumber"
 #Then I should see my patients next appointment
 #And I should see my patients symptoms
+
+Scenario: View Medical Record
+  #Given I have logged in
+  #And I am on the doctor profile page
+  Given I am on the login page
+  And I have entered valid userpass
+  And I press "Log in"
+  And I should be on the doctor profile page
+  When I click a patient name
+  Then I should see "Medical History"
+  And I should see "High Blood Pressure"
+  And I should see "Diabetes"
+  
 
 Scenario: Search Patients
 Given I am on the login page

@@ -16,7 +16,7 @@ RSpec.describe DocsignupController, type: :controller do
       post :add, {:session => {:username => "New@bun.com", :first_name => "New", :last_name_string => "User", :address => "11 Eleven St", :pnumber => "D12", :password => "pass", :confirmPassword => "pass"} }
       expect(response).to redirect_to(admin_admin_path)
       expect(Profile.find_by(username: "New@bun.com").first_name). to match("New")
-
+      expect(Credential.find_by(username: "New"))
     end
   end
 

@@ -1,3 +1,9 @@
+Given /I have logged in/ do
+    steps %Q{Given I am on the login page}
+    steps %Q{And I have entered valid userpass}
+    steps %Q{And I press "Log in"}
+end
+
 And /I have entered (in)?valid userpass/ do |invalid|
     #uname = /[^A-Za-z0-9]+[@][A-Za-z0-9]+[.][a-zA-Z$]+/
     #pword = /[^A-Za-z0-9]+/

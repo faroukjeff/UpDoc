@@ -14,6 +14,7 @@ class DocsignupController < ApplicationController
             @password = id["password"]
             @confirmPassword = id["confirmPassword"]
             
+            
             isNull = true if(@first_name == nil || @last_name_string == nil || @username == nil || @address == nil || @pnumber == nil || @password == nil || @confirmPassword == nil)
             
             flash[:notice] = "Passwords don't match" and redirect_to admin_docsignup_path and return if(@password != @confirmPassword)
