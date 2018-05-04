@@ -11,7 +11,13 @@ Rails.application.routes.draw do
   get "profile/medicalrecords"
   get "profile/searchpatients"
   get "signup/signup"
+  post "signup/add"
   get "forgotpass/forgotpass"
+  get "admin/admin"
+  get "admin/linkdoc"
+  get "admin/docsignup"
+  post "docsignup/add"
+  post "linkdoc/link"
   root "homepage#home"
   
 

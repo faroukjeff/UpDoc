@@ -24,7 +24,7 @@
               %li
                 = link_to 'Sign Up', signup_signup_path()
               %li
-                %a= link_to 'Login', login_path()
+                %a= link_to 'Log Out', login_path
               %li
                 = link_to 'Contact Us', contact_us_path()
     #loginmsg{:style =>"position:relative;top:100px;"} Login successful
@@ -39,7 +39,7 @@
       #profiledata.col-md-11{:style=>"position:relative;left:50px;padding-left:0px;"}  
         #profiles.col-md-4{:style =>"height:300px;width:100%;background-color:white;border:1px solid;position:relative;top:25px;" }
           #div1{:style=>"text-align:center;padding:10px;font-size:20px"} My Patients 
-          #div2{:style=>"text-align:right;padding:10px;font-size:15px"}= link_to  "Search Patients", profile_searchpatients_path()
+          #div2{:style=>"text-align:right;padding:10px;font-size:15px"}= link_to  "Search Patients", profile_searchpatients_path(:docid=> "#{@user[0].username}")
           %table{:style => "border:1px,solid;width:70%;margin: auto;padding:20px;"}
             %thead
               %tr
@@ -50,7 +50,7 @@
             %tbody
             - @data.each do |profile|
               %tr
-                %td= link_to "#{profile.first_name}  #{profile.last_name_string}",  profile_medicalrecords_path(:pnumber=> "#{profile.pnumber}") 
+                %td= link_to "#{profile.first_name} #{profile.last_name_string}",  profile_medicalrecords_path(:pnumber=> "#{profile.pnumber}") 
                 %td= profile.pnumber
                 %td= profile.Healthcare
                 %td= profile.address
