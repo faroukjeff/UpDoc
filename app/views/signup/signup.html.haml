@@ -36,15 +36,15 @@
       
       = form_for(:session, url: signup_add_path) do |f|
         
-        = f.label :firstname, "First Name"
-        = f.text_field :firstname, class: 'form-control'
-        = f.label :lastname, "Last Name"
-        = f.text_field :lastname, class: 'form-control'
-        = f.label :email, "Email"
-        = f.email_field :email, class: 'form-control'
+        = f.label :first_name, "First Name"
+        = f.text_field :first_name, class: 'form-control'
+        = f.label :last_name_string, "Last Name"
+        = f.text_field :last_name_string, class: 'form-control'
+        = f.label :username, "Email"
+        = f.email_field :username, class: 'form-control'
         = f.label :address, "Address"
         = f.text_field :address, class: 'form-control'
-        = f.label :insurance, "Select a Health Provider"
+        = f.label :Healthcare, "Select a Health Provider"
         %br
         %select
           %option{:value => "unitedhealth"} Unitedhealth
