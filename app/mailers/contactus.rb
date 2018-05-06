@@ -1,3 +1,0 @@
-class Contactus < ApplicationMailer
-    
-end
