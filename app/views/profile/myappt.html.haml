@@ -28,13 +28,9 @@
               %li
                 = link_to 'Contact Us', contact_us_path()
     #welcomediv{:style =>"text-align:right;padding:2px;position:relative;top:120px;"} Logged in User : #{@user[0].first_name} #{@user[0].last_name_string} 
-    #profile{:style => "position:relative;top:130px;height:800px;background-color:white;"}
-      .col-md-12{:style =>"font-size:25px;text-align:center;padding:20px;position:relative;background-color:white;"} Search Patient
+    #appt{:style => "position:relative;top:130px;height:800px;background-color:white;"}
+      .col-md-12{:style =>"font-size:25px;text-align:center;padding:20px;position:relative;background-color:white;"} My Appointments
       #profilecard.col-md-12{:style=>"height:50px;background-color:white;padding:15px;position:relative;left:50px;"}
-        = form_tag profile_searchpatients_path(:docid=> "#{@user[0].username}") do
-          #name.col-md-2{:style => "font-size:18px;padding:10px;"}Enter Patient Name: 
-          #name1.col-md-3{:style => "font-size:18px;padding:10px;"}= text_field :data1,'pname'
-          #name2.col-md-4{:style => "font-size:18px;padding:10px;"}= submit_tag 'Search'
       .col-md-6.col-md-offset-5{:style=>"font-size:18px;color:red;padding:20px"}
         = flash[:notice1]       
       #profiledata.col-md-11{:style=>"position:relative;left:50px;padding-left:0px;"}  
@@ -42,17 +38,17 @@
           %table{:style => "border:1px,solid;width:70%;margin: auto;padding:20px;"}
             %thead
               %tr
-                %th{:style => "border-bottom:1px solid;"} Name
-                %th{:style => "border-bottom:1px solid;"} Pnumber
-                %th{:style => "border-bottom:1px solid;"} Healthcare
-                %th{:style => "border-bottom:1px solid;"} Address
+                %th{:style => "border-bottom:1px solid;"} Patient 
+                %th{:style => "border-bottom:1px solid;"} Doctor
+                %th{:style => "border-bottom:1px solid;"} Slot
+                %th{:style => "border-bottom:1px solid;"} Availability
             %tbody
-            - @data.each do |profile|
+            - @data.each do |appt|
               %tr
-                %td= link_to "#{profile.first_name}  #{profile.last_name_string}",  profile_medicalrecords_path(:pnumber=> "#{profile.pnumber}") 
-                %td= profile.pnumber
-                %td= profile.Healthcare
-                %td= profile.address
+                %td= appt.pid 
+                %td= appt.did
+                %td= appt.slot
+                %td= appt.av
                 
               
         

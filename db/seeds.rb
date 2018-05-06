@@ -32,10 +32,29 @@ profiles = [{:username=> "Jeff@bin.com",:first_name=>"Jeff",:last_name_string=>"
             {:username=> "Alice@bon.com",:first_name=>"Alice",:last_name_string=>"Lane",:address=>"74 Edward Street, Binghamton NY",:pnumber=>"D04489756",:password=>"Alice119"}
            
             ]  	 
+            
+medrecords = [{:pnumber=>"P0342567",:name=>"Jeff Baker",:address=>"198 Main Street, Binghamton NY",:healthcare=>"Geo Blue",:medhistory=>"High Blood Pressure,Diabetes,Diarrhea,Back Pain,Kidney Stones" ,:meddata=>"0,1,1,0,1"},
+             {:pnumber=>"P0342896",:name=>"Joe Williams",:address=>"22 Main Street, Binghamton NY",:healthcare=>"United Healthcare",:medhistory=>"High Blood Pressure,Diabetes,Diarrhea,Back Pain,Kidney Stones",:meddata=>"1,1,1,0,0"},
+             {:pnumber=>"P0895648",:name=>"Rohit R",:address=>"145 Chapin Street, NJ",:healthcare=>"United Healthcare",:medhistory=>"High Blood Pressure,Diabetes,Diarrhea,Back Pain,Kidney Stones",:meddata=>"0,1,1,1,0"},
+             {:pnumber=>"P0895642",:name=>"John Kent",:address=>"45 Chapin Street, Binghamton NY",:healthcare=>"United Healthcare",:medhistory=>"High Blood Pressure,Diabetes,Diarrhea,Back Pain,Kidney Stones",:meddata=>"1,1,1,1,0"},
+             {:pnumber=>"P0895682",:name=>"Ron Jeffer",:address=>"145 Main Street, NJ",:healthcare=>"Geo Blue",:medhistory=>"High Blood Pressure,Diabetes,Diarrhea,Back Pain,Kidney Stones",:meddata=>"0,1,1,1,1"},
+             {:pnumber=>"P0796542",:name=>"Sue Chi",:address=>"84 Chapin Street, Binghamton NY",:healthcare=>"United Healthcare",:medhistory=>"High Blood Pressure,Diabetes,Diarrhea,Back Pain,Kidney Stones",:meddata=>"0,0,0,0,1"},
+             {:pnumber=>"P0898752",:name=>"Ramesh Kale",:address=>"222 Edward Street, Binghamton NY",:healthcare=>"United Healthcare",:medhistory=>"High Blood Pressure,Diabetes,Diarrhea,Back Pain,Kidney Stones",:meddata=>"0,1,0,1,1"}
+            
+             ]            
+
+appointments = [{:pid=>"Sue@oracle.com", :did=>"Aditya@bin.com", :slot=>"9:45", :av=>"F"},
+                {:pid=>nil, :did=>"Aditya@bin.com", :slot=>"9:00", :av=>"A"},
+ 
+               ]
 
 hospitals.each do |hospital|
 
   Hospital.create!(hospital)
+end
+
+appointments.each do |appt|
+  Appointment.create!(appt)
 end
 
 pharmacies.each do |pharmacy|
@@ -48,4 +67,8 @@ end
 
 profiles.each do |profiles|
  Profile.create!(profiles)
+end
+
+medrecords.each do |medrecord|
+ MedicalRecord.create!(medrecord)
 end

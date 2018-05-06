@@ -3,10 +3,10 @@ class HomepageController < ApplicationController
     @hospitals = Hospital.all
     @Pharmacys = Pharmacy.all
     refresh = params[:refresh]
-    p# refresh
-    puts "inside"
+    #p refresh
+    #puts "inside"
      if(refresh == 'refresh')
-       puts "inside"
+       #puts "inside"
        redirect_to homepage_home_path()
      end
   end

@@ -1,4 +1,4 @@
-- provide(:title, "Sign Up")
+- provide(:title, "Add Doctor")
 %html{:lang => "en"}
   %head
     %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
@@ -29,12 +29,12 @@
                 = link_to 'Contact Us', contact_us_path()
   
   .row{:style=>"background-color:white;position:relative;top:120px;"}
-    .col-md-12{:style=>"font-size:30px;padding:20px;"} Sign Up
+    .col-md-12{:style=>"font-size:30px;padding:20px;"} Add Doctor
     .col-md-6.col-md-offset-3{:style=>"font-size:18px;color:red;padding-bottom:15px"}
       = flash[:notice]
     .col-md-6.col-md-offset-3
       
-      = form_for(:session, url: signup_add_path) do |f|
+      = form_for(:session, url: docsignup_add_path) do |f|
         
         = f.label :first_name, "First Name"
         = f.text_field :first_name, class: 'form-control'
@@ -44,21 +44,8 @@
         = f.email_field :username, class: 'form-control'
         = f.label :address, "Address"
         = f.text_field :address, class: 'form-control'
-        = f.label :Healthcare, "Select a Health Provider"
-        %br
-        %select
-          %option{:value => "unitedhealth"} Unitedhealth
-          %option{:value => "wellpoint"} Wellpoint Inc.
-          %option{:value => "kaisar"} Kaisar Foundation
-          %option{:value => "humana"} Humana
-          %option{:value => "aetna"} Aetna
-          %option{:value => "HCSC"} HCSC
-          %option{:value => "cigna"} Cigna
-          %option{:value => "highmark"} Highmark
-          %option{:value => "coventry"} Coventry Corp.
-          %option{:value => "HIP"} HIP
-          %option{:value => "other"} Other
-        %br
+        = f.label :pnumber, "Doctor ID"
+        = f.text_field :pnumber, class: 'form-control'
         = f.label :password, "Password"
         = f.password_field :password, class: 'form-control'
         = f.label :confirmPassword, "Confirm Password"

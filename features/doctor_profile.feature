@@ -52,4 +52,17 @@ When I press "Log in"
 Then I should be on the doctor profile page
 Then I should see "Search Patient"
 And I follow "Search Patient"
-Then I should see "Search Result"
+Then I should see "Search Patient"
+
+Scenario: My Appointments
+Given I am on the login page
+And I have entered valid userpass
+When I press "Log in"
+Then I should be on the doctor profile page
+Then I should see "My Appointments"
+And I follow "My Appointments"
+Then I should see "My Appointments"
+And I should see "Patient"
+And I should see "Doctor"
+And I should see "Slot"
+And I should see "Availability"

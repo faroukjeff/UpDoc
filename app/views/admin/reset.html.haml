@@ -1,0 +1,43 @@
+- provide(:title, "Reset Appointment")
+%html{:lang => "en"}
+  %head
+    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+    %title Profile Page
+  %body{:style=>"background-color:#white"}
+    %header#header
+      %nav.navbar.navbar-fixed-top
+        .container
+          .navbar-header
+            %button.navbar-toggle{"data-target" => ".navbar-collapse", "data-toggle" => "collapse", :type => "button"}
+              %span.sr-only
+              %span.icon-bar
+              %span.icon-bar
+              %span.icon-bar
+            -#%a.navbar-brand{:href => "home.html.haml"} UpDoc
+            
+            #imagebox 
+              = link_to image_tag("Logo.png", :style => "height:65px;"), homepage_home_path(:refresh => 'refresh')
+          .collapse.navbar-collapse.navbar-right
+            %ul.nav.navbar-nav
+              %li
+                = link_to 'Home', homepage_home_path(:refresh => 'refresh')
+              %li
+                = link_to 'Sign Up', signup_signup_path()
+              %li
+                %a= link_to 'Login', login_path()
+              %li
+                = link_to 'Contact Us', contact_us_path()
+  
+  .row{:style=>"background-color:white;position:relative;top:120px;"}
+    .col-md-12{:style=>"font-size:30px;padding:20px;"} Reset Appointment
+    .col-md-6.col-md-offset-3{:style=>"font-size:18px;color:red;padding-bottom:15px"}
+      = flash[:notice]
+    .col-md-6.col-md-offset-3
+      
+      = form_for(:session, url: reset_reset_path) do |f|
+        
+        = f.label :ver, "Are You sure? (Y/N)"
+        = f.text_field :ver, class: 'form-control'
+        = f.submit "Reset", class: "btn btn-primary"
+       
+  #emptydiv{:style => "height: 200px"}
