@@ -50,24 +50,22 @@ And I should see "Pnumber"
 #Then I should see my patients next appointment
 #And I should see my patients symptoms
 
-Scenario: View Medical Record
-  #Given I have logged in
-  #And I am on the doctor profile page
-  Given I am on the login page
-  And I have entered valid userpass
-  And I press "Log in"
-  And I should be on the doctor profile page
-  When I click a patient name
-  Then I should see "Medical History"
-  And I should see "High Blood Pressure"
-  And I should see "Diabetes"
+#Scenario: View Medical Record
+#  Given I am on the login page
+#  And I have entered valid userpass
+#  And I press "Log in"
+#  And I should be on the doctor profile page
+#  When I click a patient name
+#  Then I should see "Medical History"
+#  And I should see "High Blood Pressure"
+#  And I should see "Diabetes"
   
 
-Scenario: Search Patients
-Given I am on the login page
-And I have entered valid userpass
-When I press "Log in"
-Then I should be on the doctor profile page
-Then I should see "Search Patient"
-And I follow "Search Patient"
-Then I should see "Search Result"
+#Scenario: Search Patients
+#Given I am on the login page
+#And I have entered valid userpass
+#When I press "Log in"
+#Then I should be on the doctor profile page
+#Then I should see "Search Patient"
+#And I follow "Search Patient"
+#Then I should see "Search Result"

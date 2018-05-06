@@ -39,7 +39,7 @@
       #profiledata.col-md-11{:style=>"position:relative;left:50px;padding-left:0px;"}  
         #profiles.col-md-4{:style =>"height:300px;width:100%;background-color:white;border:1px solid;position:relative;top:25px;" }
           #div1{:style=>"text-align:center;padding:10px;font-size:20px"} My Patients 
-          #div2{:style=>"text-align:right;padding:10px;font-size:15px"}= link_to  "Search Patients", profile_searchpatients_path(:docid=> "#{@user[0].username}")
+          #div2{:style=>"text-align:right;padding:10px;font-size:15px"}= link_to  "Search Patients", profile_searchpatients_path(:username=> "#{@user[0].username}")
           %table{:style => "border:1px,solid;width:70%;margin: auto;padding:20px;"}
             %thead
               %tr
