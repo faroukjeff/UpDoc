@@ -55,3 +55,16 @@ Given /the following medical_records exist/ do |medicalrecords|
         MedicalRecord.create!(med)
     end
 end
+
+And /I have filled (in)?valid name/ do |invalid|
+    
+    if invalid
+        uname = "Aditya"
+    else
+        uname = "Jeff Baker"
+    end
+    
+    fill_in "data1[pname]", :with => uname
+    
+
+end

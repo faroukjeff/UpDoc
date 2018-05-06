@@ -10,7 +10,12 @@ Background: credentials have been added to database
   | username          | password    |
   | Jeff@bin.com      | Realmadrid1 |          
   | Joe@bon.com       | Mufc19      |
-  
+ 
+
+   Given the following profiles exist:      
+      | username       | password    | first_name | last_name_string | address                          | pnumber   | Healthcare | docid           |
+      | Jeff@bin.com   | Realmadrid1 | Jeff       | Baker            | 198 Main Street, Binghamton NY   | P0342567  | Geo Blue   | Aditya@bin.com  |
+      | Aditya@bin.com | Arsenal4    | Aditya     |  Dere            | 144 Edward Street, Binghamton NY | D0445687  |            |                 |  
 
 Scenario:
   Given I am on the home page

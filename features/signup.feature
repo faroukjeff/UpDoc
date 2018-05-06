@@ -12,7 +12,11 @@ Scenario:
 Scenario:
     Given I am on the home page
     When I follow "Sign Up"
-    Then I should not see "Address"
+    Then I should not see "Username"
     Then I should not see "Doctor"
 
-    
+Scenario:
+  Given I am on the home page
+  When I follow "Sign Up"
+  Then I press "Sign Up"
+  Then I should see "Fields cannot be null"

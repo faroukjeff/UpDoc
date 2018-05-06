@@ -1,9 +1,9 @@
-- provide(:title, "Adminlogin")
+- provide(:title, "Doctor Appointment Add")
 %html{:lang => "en"}
   %head
     %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
     %title Profile Page
-  %body{:style=>"background-color:white"}
+  %body{:style=>"background-color:#white"}
     %header#header
       %nav.navbar.navbar-fixed-top
         .container
@@ -29,16 +29,17 @@
                 = link_to 'Contact Us', contact_us_path()
   
   .row{:style=>"background-color:white;position:relative;top:120px;"}
-    .col-md-12{:style=>"font-size:30px;padding:20px;"} Admin Panel
+    .col-md-12{:style=>"font-size:30px;padding:20px;"} Doctor Appiontment Adder
     .col-md-6.col-md-offset-3{:style=>"font-size:18px;color:red;padding-bottom:15px"}
       = flash[:notice]
     .col-md-6.col-md-offset-3
       
-      %li
-        = link_to 'Create doctor account', admin_docsignup_path()
-      %li
-        = link_to 'Link doctor to patient', admin_linkdoc_path()
-      %li
-        = link_to 'Add Doctor to Appointment Table', admin_docappt_path()
-      %li
-        = link_to 'Reset Appointment Table', admin_reset_path()
+      = form_for(:session, url: docappt_add_path) do |f|
+        
+        = f.label :docid, "Doctor Email"
+        = f.text_field :docid, class: 'form-control'
+        = f.label :slot, "Appointment Time Slot"
+        = f.text_field :slot, class: 'form-control'
+        = f.submit "Add Doc to Appt Table", class: "btn btn-primary"
+       
+  #emptydiv{:style => "height: 200px"}

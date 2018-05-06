@@ -18,6 +18,8 @@ Scenario:
   #Then I should see a table of users  #define in admin_steps.rb
   And I should see "Create doctor account"
   And I should see "Link doctor to patient"
+  And I should see "Add Doctor to Appointment Table"
+  And I should see "Reset Appointment Table"
   
 Scenario:
   Given I am on the admin admin page
@@ -26,7 +28,7 @@ Scenario:
   And I should see "Doctor Email"
   And I should see "Patient Email"
   
-Scenario:
+Scenario: Sign up doctor
   Given I am on the admin admin page
   When I follow "Create doctor account"
   Then I should be on the admin docsignup page
@@ -34,3 +36,10 @@ Scenario:
   And I should see "Email"
   And I should see "Confirm Password"
   And I should see "Doctor ID"
+  
+Scenario: Adding Doctor to Appointment table
+Given I am on the admin admin page
+When I follow "Add Doctor to Appointment Table"
+Then I should be on the admin docappt page
+And I should see "Doctor Email"
+And I should see "Appointment Time Slot"

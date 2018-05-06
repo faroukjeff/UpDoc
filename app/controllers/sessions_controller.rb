@@ -29,7 +29,11 @@ class SessionsController < ApplicationController
           data1 = data[0]
           if(data1["usertype"] == "D")
             redirect_to profile_doctorprofile_path(:params1=> data1["username"])      
-          end
+          else
+            @user = Profile.where(:username => checkid)
+            mydoc = @user[0].docid
+            @mydoc = Profile.where(:username => mydoc)
+          end  
         end  
     end
   end
