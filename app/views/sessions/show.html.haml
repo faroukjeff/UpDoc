@@ -40,6 +40,6 @@
         #profiles.col-md-4{:style =>"height:250px;width:100%;background-color:white;border:1px solid;position:relative;top:25px;" }          
           #mydoc{:style =>"font-size:16px;padding:10px;"}My Doctor : #{@mydoc[0].first_name} #{@mydoc[0].last_name_string} 
           #medicalrecords{:style =>"font-size:16px;padding:20px;"}= link_to "View My Medical Records",  profile_medicalrecords_path(:pnumber=> "#{@user[0].pnumber}")         
-          #myappt{:style =>"font-size:16px;padding:20px;"}= link_to "Make Appointment",  appointment_appointment_path(:pnumber=> "#{@user[0].pnumber}")         
+          #myappt{:style =>"font-size:16px;padding:20px;"}= link_to "Make an Appointment",  appointment_appointment_path(:pnumber=> "#{@user[0].pnumber}")         
               
               

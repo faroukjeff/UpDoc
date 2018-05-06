@@ -28,6 +28,25 @@ Scenario: Patient Profile Page
   And I should see "Address"
   And I should see "View My Medical Records"
   And I should see "My Doctor"
-  And I should see "Make Appointment"
+  And I should see "Make an Appointment"
+  
+  
+  
+Scenario: Make an Appointment
+  Given I am on the login page
+  And I have entered valid credential
+  When I press "Log in"
+  Then I should be on the profile page
+  And I should see "Login successful"
+  When I follow "Make an Appointment"
+  Then I should see "Available Appointments"
+  Then I should see "Doctor"
+  Then I should see "Slot"
+  Then I should see "Doctor Email"
+  Then I should see "Time Slot"
+  Then I should see "Patient Name"
+  
+  
+  
 
 
