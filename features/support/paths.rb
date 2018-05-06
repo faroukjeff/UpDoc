@@ -20,7 +20,10 @@ module NavigationHelpers
       '/login'
       
     when /^the doctor profile\s?page$/
-      '/profile/doctorprofile'  
+      '/profile/doctorprofile'
+      
+    when /^the patient profile\s?page$/
+      '/sessions/show'  
    
     #when /^the profile page$/ then '/login'
     # Add more mappings here.

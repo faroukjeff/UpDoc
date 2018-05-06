@@ -11,7 +11,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180501043231) do
+ActiveRecord::Schema.define(version: 20180506001752) do
+
+  create_table "appointments", force: :cascade do |t|
+    t.string   "pid"
+    t.string   "did"
+    t.string   "slot"
+    t.string   "av"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "credentials", force: :cascade do |t|
     t.string   "username"

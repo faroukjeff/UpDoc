@@ -1,9 +1,8 @@
-Feature: login
+Feature: doctor_profile
+As a doctor
+So that I can see my patients data
+I want to see my personal profile pages
 
-  As a patient
-  So that I can manage my appointments and information
-  I want to log in
-  
 Background: credentials have been added to database
 
   Given the following credentials exist:
@@ -16,24 +15,19 @@ Background: credentials have been added to database
       | username       | password    | first_name | last_name_string | address                          | pnumber   | Healthcare | docid           |
       | Jeff@bin.com   | Realmadrid1 | Jeff       | Baker            | 198 Main Street, Binghamton NY   | P0342567  | Geo Blue   | Aditya@bin.com  |
       | Aditya@bin.com | Arsenal4    | Aditya     |  Dere            | 144 Edward Street, Binghamton NY | D0445687  |            |                 |  
+  
 
-Scenario:
-  Given I am on the home page
-  When I follow "Login"
-  Then I should see "Username"
-  And I should see "Password"
-
-Scenario:
+Scenario: Patient Profile Page
   Given I am on the login page
   And I have entered valid credential
   When I press "Log in"
   Then I should be on the profile page
   And I should see "Login successful"
+  Then I should see "Name"
+  And I should see "Patient Id"
+  And I should see "Address"
+  And I should see "View My Medical Records"
+  And I should see "My Doctor"
+  And I should see "Make Appointment"
 
-Scenario:
-  Given I am on the login page
-  And I have entered invalid credential
-  When I press "Log in"
-  Then I should see "Wrong username/password"
-  And I should see "Forgot Password?"
-  And I should see "Sign Up"
+

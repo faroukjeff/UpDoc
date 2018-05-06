@@ -43,8 +43,17 @@ medrecords = [{:pnumber=>"P0342567",:name=>"Jeff Baker",:address=>"198 Main Stre
             
              ]            
 
+appointments = [{:pid=>"Sue@oracle.com", :did=>"Aditya@bin.com", :slot=>"9:45", :av=>"F"},
+                {:pid=>nil, :did=>"Aditya@bin.com", :slot=>"9:00", :av=>"A"},
+ 
+               ]
+
 hospitals.each do |hospital|
   Hospital.create!(hospital)
+end
+
+appointments.each do |appt|
+  Appointment.create!(appt)
 end
 
 pharmacies.each do |pharmacy|

@@ -52,4 +52,4 @@ When I press "Log in"
 Then I should be on the doctor profile page
 Then I should see "Search Patient"
 And I follow "Search Patient"
-Then I should see "Search Result"
+Then I should see "Search Patient"

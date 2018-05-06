@@ -13,8 +13,6 @@ class SessionsController < ApplicationController
     checkid = id["username"]
     password = id["password"]
     data = Credential.where(:username => checkid , :password => password)
-    
-    #p data
      
     if(checkid == "admin003@updoc.com" and password == "admintest7")
         redirect_to admin_admin_path
@@ -27,8 +25,16 @@ class SessionsController < ApplicationController
           data1 = data[0]
           if(data1["usertype"] == "D")
             redirect_to profile_doctorprofile_path(:params1=> data1["username"])      
-          end
+          else
+            @user = Profile.where(:username => checkid)
+            mydoc = @user[0].docid
+            @mydoc = Profile.where(:username => mydoc)
+          end  
         end  
     end
+    
+    #data2 = params[:params1]
+    
+    
   end
 end
