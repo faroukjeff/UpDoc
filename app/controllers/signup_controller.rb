@@ -12,7 +12,7 @@ class SignupController < ApplicationController
             @address = id["address"]
             @pnumber = id["pnumber"]
             @Healthcare = id["Healthcare"]
-            @password = id["password"]
+            @password = id["password"] 
             @confirmPassword = id["confirmPassword"]
             
             
