@@ -17,8 +17,8 @@ RSpec.describe AppointmentController, type: :controller do
     it "is successful" do
       @a = Appointment.create!({:pid=>nil, :did=>"Aditya@bin.com", :slot=>"9:00", :av=>"A"})
       post :confirm, {:session => {:docid => 'Aditya@bin.com', :slot => '9:00', :pname => "Jeff@bin.com"} }
-      @f = Appointment.create!({:pid=>"Jeff@bin.com", :did=>"Aditya@bin.com", :slot=>"9:00", :av=>"F"})
-      expect(Appointment.all).to include(@f)
+      @f = Appointment.new({:pid=>"Jeff@bin.com", :did=>"Aditya@bin.com", :slot=>"9:00", :av=>"F"})
+      expect(Appointment.all[0].av).to eq("F")
       expect(response).to redirect_to(login_path)
     end
     it "is unsuccessful" do
