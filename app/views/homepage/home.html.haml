@@ -50,7 +50,7 @@
                 %i.fa.fa-ambulance
                 %h4 Emergency Contact Numbers
           
-    #medicals{:style =>"height:200px;width:100%;background-color:white;"}
+    #medicals{:style =>"height:200px;width:100%;background-color:white; display:none;"}
       %table{:style => "border:1px,solid;width:70%;margin: auto;padding:20px;"}
         %thead
           %tr
@@ -63,7 +63,7 @@
               %td= pharmacy.name 
               %td= pharmacy.street
               %td= pharmacy.city
-    #hospitals.col-md-4.hidden-element{:style =>"height:200px;width:100%;background-color:white;" }
+    #hospitals.col-md-4.hidden-element{:style =>"height:200px;width:100%;background-color:white;display:none;" }
       %table{:style => "border:1px,solid;width:70%;margin: auto;padding:20px;"}
         %thead
           %tr
@@ -76,7 +76,7 @@
               %td= hospital.name 
               %td= hospital.street
               %td= hospital.city
-    #emergency{:style =>"height:200px;width:100%;background-color:white;"}
+    #emergency{:style =>"height:200px;width:100%;background-color:white;display:none;"}
       %div{:style => "margin:auto;padding:20px;text-align:center;"} Emergency Contact No: +1 607-2324639 , +212 636-184364
     %footer
       .social-icon
