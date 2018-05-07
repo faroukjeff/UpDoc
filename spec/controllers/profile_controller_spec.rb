@@ -32,9 +32,6 @@ RSpec.describe ProfileController, type: :controller do
       get :searchpatients, {:data1 => {:pname => "Dalai Lama"}, :docid => "Aditya@bin.com" }
       response.should be_ok
       expect(assigns(:data)).to eq([])
-      ##############################
-      #expect(response).to redirect_to(profile_searchpatients_path(:first_name => "Dalai", :last_name => "Lama", :docid => "Aditya@bin.com"))
-      #page.should have_content("Patient not found")
   end
   
   describe "view appointments" do

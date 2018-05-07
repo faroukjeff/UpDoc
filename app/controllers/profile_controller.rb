@@ -4,11 +4,12 @@ def profile_params
     params.require(:session).permit(:username)
 end
 
+=begin
  def patientprofile
    data = params[:params1]
    @user = Profile.where(:username => data)
  end
-
+=end
  def doctorprofile
    data = params[:params1]
    @user = Profile.where(:username => data)

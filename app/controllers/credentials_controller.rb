@@ -1,2 +1,0 @@
-class CredentialsController < ApplicationController
-end

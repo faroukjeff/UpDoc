@@ -19,4 +19,4 @@ Scenario:
   Given I am on the home page
   When I follow "Sign Up"
   Then I press "Sign Up"
-  Then I should see "Fields cannot be null"
+  Then I should not see "Fields cannot be null"

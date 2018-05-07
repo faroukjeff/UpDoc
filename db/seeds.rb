@@ -16,7 +16,8 @@ credentials = [{:username=> 'Aditya@bin.com', :password=> 'Arsenal4', :usertype=
     	  {:username=> 'Ron@gmail.com', :password=> 'Ron19', :usertype=> 'P'},
     	  {:username=> 'Ramesh@bon.com', :password=> 'Ramesh19', :usertype=> 'P'},
     	  {:username=> 'Sue@oracle.com', :password=> 'Sue19', :usertype=> 'P'},
-    	  {:username=> 'Alice@bon.com', :password=> 'Alice119', :usertype=> 'D'}
+    	  {:username=> 'Alice@bon.com', :password=> 'Alice119', :usertype=> 'D'},
+    	  {:username=> 'Adimn@updoc.com', :password=> 'Admin119', :usertype=> 'D'}
   	 ]
 
 
@@ -29,8 +30,8 @@ profiles = [{:username=> "Jeff@bin.com",:first_name=>"Jeff",:last_name_string=>"
             {:username=> "Ramesh@bon.com",:first_name=>"Ramesh",:last_name_string=>"Kale",:address=>"222 Edward Street, Binghamton NY",:pnumber=>"P0898752",:Healthcare=>"United Healthcare",:password=>"Ramesh19",:docid=>"Alice@bon.com"},
             {:username=> "Sue@oracle.com",:first_name=>"Sue",:last_name_string=>"Chi",:address=>"84 Chapin Street, Binghamton NY",:pnumber=>"P0796542",:Healthcare=>"United Healthcare",:password=>"Sue19",:docid=>"Alice@bon.com"},
             {:username=> "Aditya@bin.com",:first_name=>"Aditya",:last_name_string=>"Dere",:address=>"144 Edward Street, Binghamton NY",:pnumber=>"D0445687",:password=>"Arsenal4"},
-            {:username=> "Alice@bon.com",:first_name=>"Alice",:last_name_string=>"Lane",:address=>"74 Edward Street, Binghamton NY",:pnumber=>"D04489756",:password=>"Alice119"}
-           
+            {:username=> "Alice@bon.com",:first_name=>"Alice",:last_name_string=>"Lane",:address=>"74 Edward Street, Binghamton NY",:pnumber=>"D04489756",:password=>"Alice119"},
+            {:username=> "Adimn@updoc.com",:first_name=>"Admin",:last_name_string=>"",:address=>"NA",:pnumber=>"NA",:password=>"Admin119"}
             ]  	 
             
 medrecords = [{:pnumber=>"P0342567",:name=>"Jeff Baker",:address=>"198 Main Street, Binghamton NY",:healthcare=>"Geo Blue",:medhistory=>"High Blood Pressure,Diabetes,Diarrhea,Back Pain,Kidney Stones" ,:meddata=>"0,1,1,0,1"},
@@ -49,6 +50,7 @@ appointments = [{:pid=>"Sue@oracle.com", :did=>"Aditya@bin.com", :slot=>"9:45", 
                ]
 
 hospitals.each do |hospital|
+
   Hospital.create!(hospital)
 end
 
