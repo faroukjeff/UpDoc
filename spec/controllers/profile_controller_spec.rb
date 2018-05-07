@@ -24,7 +24,7 @@ RSpec.describe ProfileController, type: :controller do
       #     and be brought to a results page located at profile_searchpatients_path
       get :searchpatients, {:first_name => "Jeff", :last_name_string => "Baker", :docid => "Aditya@bin.com" }
       response.should be_ok
-      expect(assigns(:patients)).to match(Profile.where(:first_name => "Jeff", :last_name_string => "Data"))
+      expect(assigns(:patients)).to match(Profile.where(:first_name => "Jeff", :last_name_string => "Baker"))
       
       ##############################
       #expect(response).to redirect_to(profile_searchpatients_path(:first_name => "Jeff", :last_name => "Baker", :docid => "Aditya@bin.com"))
