@@ -1,9 +1,13 @@
 UpDoc:
 
+
 Looking for platform where you can keep all your medical records and book an appointment with physician online?
- -If so, then UpDoc is here to help you with that.
+ If so, then UpDoc is here to help you with that.
+
+
 
 Gems used
+
 ruby '2.3.4'
 'rails', '4.2.6'
 'omniauth'
@@ -34,8 +38,14 @@ ruby '2.3.4'
 'haml'
 
 Steps to setup:
-1.	Run command bundle install
-2.	Get the database setup using rake db:migrate
-3.	(Optional) Seed the database rake db:seed
-4.	Run the server rails s -p $PORT -b $IP
+
+1.	Fork and clone the project on your workspace using command git clone https://github.com/faroukjeff/UpDoc.git 
+
+2.	Run command bundle install
+
+3.	Get the database setup using rake db:migrate
+
+4.	(Optional) Seed the database rake db:seed
+
+5.	Run the server rails s -p $PORT -b $IP
 

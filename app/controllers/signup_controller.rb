@@ -24,7 +24,7 @@ class SignupController < ApplicationController
                end         
             end
             
-            isNull = true if(@first_name == nil || @last_name_string == nil || @username == nil || @address == nil || @pnumber == nil || @Healthcare == nil || @password == nil || @confirmPassword == nil)
+            isNull = true if(@first_name.empty? || @last_name_string.empty? || @username.empty? || @address.empty? || @pnumber.empty? || @Healthcare.empty? || @password.empty? || @confirmPassword.empty?)
             
             flash[:notice] = "Passwords don't match" and redirect_to signup_signup_path and return if(@password != @confirmPassword)
             flash[:notice] = "Fields cannot be null" and redirect_to signup_signup_path and return if (isNull)
