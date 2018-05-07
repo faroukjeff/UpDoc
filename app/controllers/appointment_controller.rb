@@ -13,7 +13,6 @@ class AppointmentController < ApplicationController
         @docid = id["docid"]
         @tslot = id["slot"]
         @name = id["pname"]
-        
         if Appointment.find_by(did: @docid, slot: @tslot).blank?
             flash[:notice] = "Invalid Doctor or Time Slot"
         else
