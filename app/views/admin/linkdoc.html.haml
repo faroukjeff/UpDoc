@@ -36,10 +36,10 @@
       
       = form_for(:session, url: linkdoc_link_path) do |f|
         
-        = f.label :docid, "Doctor Email"
-        = f.text_field :docid, class: 'form-control'
-        = f.label :patid, "Patient Email"
-        = f.text_field :patid, class: 'form-control'
+        = f.label :doc, "Doctor Email"
+        = f.text_field :doc, class: 'form-control'
+        = f.label :pat, "Patient Email"
+        = f.text_field :pat, class: 'form-control'
         = f.submit "Link", class: "btn btn-primary"
        
   #emptydiv{:style => "height: 200px"}

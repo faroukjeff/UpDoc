@@ -9,7 +9,8 @@ class LinkdocController < ApplicationController
         @doc = id["doc"]
         @pat = id["pat"]
         patient = Profile.find_by(username: @pat)
-        if patient
+        p patient   
+        if !patient.nil? 
             patient.update(docid: @doc)
             redirect_to admin_admin_path
         else
