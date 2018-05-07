@@ -9,6 +9,7 @@ RSpec.describe AppointmentController, type: :controller do
       get :appointment
       expect(assigns(:data)).to include(@a)
       expect(assigns(:data)).to_not include(@f)
+      Appointment.destroy_all
     end
   end
 
@@ -17,12 +18,14 @@ RSpec.describe AppointmentController, type: :controller do
       @a = Appointment.create!({:pid=>nil, :did=>"Aditya@bin.com", :slot=>"9:00", :av=>"A"})
       post :confirm, {:session => {:docid => 'Aditya@bin.com', :slot => '9:00', :pname => "Jeff@bin.com"} }
       @f = Appointment.create!({:pid=>"Jeff@bin.com", :did=>"Aditya@bin.com", :slot=>"9:00", :av=>"F"})
-      expect(assigns(:appt)).to include(@f)
+      expect(Appointment.all).to include(@f)
+      expect(response).to redirect_to(login_path)
     end
     it "is unsuccessful" do
       @a = Appointment.create!({:pid=>nil, :did=>"Aditya@bin.com", :slot=>"9:00", :av=>"A"})
       post :confirm, {:session => {:docid => 'Aditya@bin.com', :slot => '10:00', :pname => "Jeff@bin.com"} }
-      expect(response).to have_content("Invalid Doctor or Time Slot")
+      expect(response).to redirect_to(login_path)
+      expect(flash[:notice]).to have_content("Invalid Doctor or Time Slot")
     end
   end
 
