@@ -1,7 +1,7 @@
 {
   "Cucumber Features": {
     "coverage": {
-      "/home/ubuntu/workspace/app/controllers/admin_controller.rb": [
+      "/home/ubuntu/workspace/UpDoc/app/controllers/admin_controller.rb": [
         1,
         null,
         1,
@@ -9,18 +9,18 @@
         null,
         null
       ],
-      "/home/ubuntu/workspace/app/controllers/application_controller.rb": [
+      "/home/ubuntu/workspace/UpDoc/app/controllers/application_controller.rb": [
         1,
         null,
         null,
         1,
         null
       ],
-      "/home/ubuntu/workspace/app/helpers/contact_us/contacts_helper.rb": [
+      "/home/ubuntu/workspace/UpDoc/app/helpers/contact_us/contacts_helper.rb": [
         1,
         null
       ],
-      "/home/ubuntu/workspace/app/controllers/homepage_controller.rb": [
+      "/home/ubuntu/workspace/UpDoc/app/controllers/homepage_controller.rb": [
         1,
         1,
         10,
@@ -45,26 +45,26 @@
         null,
         null
       ],
-      "/home/ubuntu/workspace/app/models/hospital.rb": [
+      "/home/ubuntu/workspace/UpDoc/app/models/hospital.rb": [
         1,
         null,
         null
       ],
-      "/home/ubuntu/workspace/app/models/pharmacy.rb": [
+      "/home/ubuntu/workspace/UpDoc/app/models/pharmacy.rb": [
         1,
         null,
         null
       ],
-      "/home/ubuntu/workspace/app/models/credential.rb": [
+      "/home/ubuntu/workspace/UpDoc/app/models/credential.rb": [
         1,
         null
       ],
-      "/home/ubuntu/workspace/app/models/profile.rb": [
+      "/home/ubuntu/workspace/UpDoc/app/models/profile.rb": [
         1,
         null,
         null
       ],
-      "/home/ubuntu/workspace/app/controllers/sessions_controller.rb": [
+      "/home/ubuntu/workspace/UpDoc/app/controllers/sessions_controller.rb": [
         1,
         null,
         1,
@@ -106,7 +106,7 @@
         null,
         null
       ],
-      "/home/ubuntu/workspace/app/controllers/profile_controller.rb": [
+      "/home/ubuntu/workspace/UpDoc/app/controllers/profile_controller.rb": [
         1,
         null,
         1,
@@ -167,51 +167,24 @@
         null,
         1,
         1,
-        1,
         null,
         1,
         1,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
         null,
         null,
         null,
         null,
         null
       ],
-      "/home/ubuntu/workspace/app/models/appointment.rb": [
+      "/home/ubuntu/workspace/UpDoc/app/models/appointment.rb": [
         1,
         null
       ],
-      "/home/ubuntu/workspace/app/models/medical_record.rb": [
+      "/home/ubuntu/workspace/UpDoc/app/models/medical_record.rb": [
         1,
         null
       ],
-      "/home/ubuntu/workspace/app/controllers/appointment_controller.rb": [
+      "/home/ubuntu/workspace/UpDoc/app/controllers/appointment_controller.rb": [
         1,
         null,
         1,
@@ -227,7 +200,6 @@
         0,
         0,
         0,
-        null,
         0,
         0,
         null,
@@ -241,7 +213,7 @@
         null,
         null
       ],
-      "/home/ubuntu/workspace/app/controllers/signup_controller.rb": [
+      "/home/ubuntu/workspace/UpDoc/app/controllers/signup_controller.rb": [
         1,
         null,
         1,
@@ -284,7 +256,7 @@
         null,
         null
       ],
-      "/home/ubuntu/workspace/app/controllers/reset_controller.rb": [
+      "/home/ubuntu/workspace/UpDoc/app/controllers/reset_controller.rb": [
         0,
         null,
         0,
@@ -307,7 +279,7 @@
         0,
         0
       ],
-      "/home/ubuntu/workspace/app/controllers/contacts_controller.rb": [
+      "/home/ubuntu/workspace/UpDoc/app/controllers/contacts_controller.rb": [
         0,
         null,
         null,
@@ -318,45 +290,7 @@
         null,
         0
       ],
-      "/home/ubuntu/workspace/app/controllers/docappt_controller.rb": [
-        0,
-        null,
-        0,
-        0,
-        0,
-        null,
-        0,
-        0,
-        0,
-        0,
-        null,
-        0,
-        null,
-        0,
-        null,
-        0,
-        0,
-        null,
-        0,
-        0,
-        0,
-        0,
-        null,
-        0,
-        0,
-        null,
-        0
-      ],
-      "/home/ubuntu/workspace/app/controllers/forgotpass_controller.rb": [
-        0,
-        null,
-        0,
-        0,
-        null,
-        null,
-        0
-      ],
-      "/home/ubuntu/workspace/app/controllers/linkdoc_controller.rb": [
+      "/home/ubuntu/workspace/UpDoc/app/controllers/linkdoc_controller.rb": [
         0,
         null,
         0,
@@ -382,7 +316,7 @@
         null,
         0
       ],
-      "/home/ubuntu/workspace/app/controllers/docsignup_controller.rb": [
+      "/home/ubuntu/workspace/UpDoc/app/controllers/docsignup_controller.rb": [
         0,
         null,
         0,
@@ -410,10 +344,48 @@
         null,
         0,
         0,
+        0
+      ],
+      "/home/ubuntu/workspace/UpDoc/app/controllers/forgotpass_controller.rb": [
+        0,
+        null,
+        0,
+        0,
+        null,
+        null,
+        0
+      ],
+      "/home/ubuntu/workspace/UpDoc/app/controllers/docappt_controller.rb": [
+        0,
+        null,
+        0,
+        0,
+        0,
+        null,
+        0,
+        0,
+        0,
+        0,
+        null,
+        0,
+        null,
+        0,
+        null,
+        0,
+        0,
+        null,
+        0,
+        0,
+        0,
+        0,
+        null,
+        0,
+        0,
+        null,
         0
       ]
     },
-    "timestamp": 1525678643
+    "timestamp": 1525723999
   },
   "RSpec": {
     "coverage": {
