@@ -15,9 +15,7 @@ RSpec.describe SessionsController, type: :controller do
       expect(response).to redirect_to('/login')
     end
     it "is successful" do
-      @cred = {:username => 'Aditya@bin.com', :password => 'Arsenal4', :usertype => "D"}
-      Credential.create!(@cred)
-      post :show, {:session => @cred }
+      post :show, {:session => {:username => 'Aditya@bin.com', :password => 'Arsenal4', :usertype => "D"} }
       #expect(page.body).to match("Your Profile")
       expect(response).to redirect_to(profile_doctorprofile_path(:params1 => 'Aditya@bin.com'))
     end
@@ -41,11 +39,7 @@ RSpec.describe SessionsController, type: :controller do
       expect(response).to redirect_to('/login')
     end
     it "is successful" do
-      #post :show, {:session => {:username => 'Jeff@bin.com', :password => 'Realmadrid1'} }
-      Profile.create!({:username=> "Jeff@bin.com",:first_name=>"Jeff",:last_name_string=>"Baker",:address=>"198 Main Street, Binghamton NY",:pnumber=>"P0342567",:Healthcare=>"Geo Blue",:password=>"Realmadrid1",:docid=>"Aditya@bin.com"}) 
-      @cred = {:username => 'Jeff@bin.com', :password => 'Realmadrid1'}
-      Credential.create!(@cred)
-      post :show, {:session => @cred }
+      post :show, {:session => {:username => 'Jeff@bin.com', :password => 'Realmadrid1'} }
       expect(response).to have_http_status(:success)
     end
   end
