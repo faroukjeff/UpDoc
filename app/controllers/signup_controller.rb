@@ -26,7 +26,10 @@ class SignupController < ApplicationController
             
             isNull = true if(@first_name.empty? || @last_name_string.empty? || @username.empty? || @address.empty? || @pnumber.empty? || @Healthcare.empty? || @password.empty? || @confirmPassword.empty?)
             
+            
+            
             flash[:notice] = "Passwords don't match" and redirect_to signup_signup_path and return if(@password != @confirmPassword)
+            flash[:notice] = "Invalid Email" and redirect_to signup_signup_path and return if !(@username.include? "@")
             flash[:notice] = "Fields cannot be null" and redirect_to signup_signup_path and return if (isNull)
             
             Profile.create!(:username => @username, :first_name => @first_name, :last_name_string => @last_name_string, :address => @address, :pnumber => @pnumber, :password => @password, :Healthcare => @Healthcare,:docid => "Adimn@updoc.com")

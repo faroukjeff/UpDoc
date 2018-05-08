@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe ContactUs::ContactsController, type: :controller do
-    describe 'GET new' do
+  describe 'GET new' do
     def do_get
       get :new
     end
