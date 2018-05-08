@@ -12,10 +12,12 @@ class HomepageController < ApplicationController
   end
   
   def index
+=begin      
     refresh = params[:refresh]
      if(refresh == 'refresh') 
        redirect_to :back
-     end  
+     end
+=end     
   end  
   
   def show

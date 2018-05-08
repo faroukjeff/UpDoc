@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe AppointmentController, type: :controller do
-
+  
   describe "show available appointments" do
     it "is successful" do
       @a = Appointment.create!({:pid=>nil, :did=>"Aditya@bin.com", :slot=>"9:00", :av=>"A"})
@@ -14,6 +14,7 @@ RSpec.describe AppointmentController, type: :controller do
   end
 
   describe "create appointment" do
+    
     it "is successful" do
       @a = Appointment.create!({:pid=>nil, :did=>"Aditya@bin.com", :slot=>"9:00", :av=>"A"})
       post :confirm, {:session => {:docid => 'Aditya@bin.com', :slot => '9:00', :pname => "Jeff@bin.com"} }
