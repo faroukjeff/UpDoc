@@ -1,13 +1,9 @@
 require 'rails_helper'
 
-RSpec.describe ForgotpassController, type: :controller do
-
-
-
-
-describe 'GET forgotpass' do
+RSpec.describe ContactUs::ContactsController, type: :controller do
+    describe 'GET new' do
     def do_get
-      get :forgotpass
+      get :new
     end
 
     it 'responds with http success' do
@@ -17,9 +13,7 @@ describe 'GET forgotpass' do
 
     it 'renders the index template' do
       do_get
-      expect(response).to render_template('forgotpass/forgotpass')
+      expect(response).to render_template('contact_us/contacts/new')
     end
   end
-
-
-end    
+end
