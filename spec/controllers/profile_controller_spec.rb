@@ -13,6 +13,19 @@ RSpec.describe ProfileController, type: :controller do
       expect(assigns(:medcheckbox))
     end
   end
+  
+  describe "doctor profile" do
+    it "creates necessary variables" do
+      @d = Profile.create!({:username=> "Aditya@bin.com",:first_name=>"Aditya",:last_name_string=>"Dere",:address=>"144 Edward Street, Binghamton NY",:pnumber=>"D0445687",:password=>"Arsenal4"})
+      @p = Profile.create!({:username=> "Jeff@bin.com",:first_name=>"Jeff",:last_name_string=>"Baker",:address=>"198 Main Street, Binghamton NY",:pnumber=>"P0342567",:Healthcare=>"Geo Blue",:password=>"Realmadrid1",:docid=>"Aditya@bin.com"})
+      post :doctorprofile, { :params1 => "Aditya@bin.com" }
+      expect(assigns(:data)).to include(@p)
+      expect(assigns(:user)).to include(@d)
+    end
+    #it "permits" do
+    #  Profile.should_receive(:session).with(:username)
+    #end
+  end
 
   describe "search for patient" do
     it "is successful" do
@@ -24,7 +37,15 @@ RSpec.describe ProfileController, type: :controller do
       expect(assigns(:data)).to include(@p)
       expect(assigns(:user)).to include(@d)
     end
-  end
+    it "uses only first name" do
+      @d = Profile.create!({:username=> "Aditya@bin.com",:first_name=>"Aditya",:last_name_string=>"Dere",:address=>"144 Edward Street, Binghamton NY",:pnumber=>"D0445687",:password=>"Arsenal4"})
+      @p = Profile.create!({:username=> "Jeff@bin.com",:first_name=>"Jeff",:last_name_string=>"Baker",:address=>"198 Main Street, Binghamton NY",:pnumber=>"P0342567",:Healthcare=>"Geo Blue",:password=>"Realmadrid1",:docid=>"Aditya@bin.com"})
+      
+      get :searchpatients, {:data1 => {:pname => "Jeff"}, :docid => "Aditya@bin.com" }
+      response.should be_ok
+      expect(assigns(:data)).to include(@p)
+      expect(assigns(:user)).to include(@d)
+    end
     it "is unsuccessful" do
       Profile.create!({:username=> "Aditya@bin.com",:first_name=>"Aditya",:last_name_string=>"Dere",:address=>"144 Edward Street, Binghamton NY",:pnumber=>"D0445687",:password=>"Arsenal4"})
       Profile.create!({:username=> "Jeff@bin.com",:first_name=>"Jeff",:last_name_string=>"Baker",:address=>"198 Main Street, Binghamton NY",:pnumber=>"P0342567",:Healthcare=>"Geo Blue",:password=>"Realmadrid1",:docid=>"Aditya@bin.com"})
@@ -32,6 +53,7 @@ RSpec.describe ProfileController, type: :controller do
       get :searchpatients, {:data1 => {:pname => "Dalai Lama"}, :docid => "Aditya@bin.com" }
       response.should be_ok
       expect(assigns(:data)).to eq([])
+    end
   end
   
   describe "view appointments" do

@@ -11,12 +11,13 @@ class HomepageController < ApplicationController
      end
   end
   
-  def index
-    refresh = params[:refresh]
-     if(refresh == 'refresh') 
-       redirect_to :back
-     end  
-  end  
+  #there is no route for this, never used
+  #def index
+  #  refresh = params[:refresh]
+  #  if(refresh == 'refresh') 
+  #     redirect_to :back
+  #  end  
+  #end  
   
   def show
   end  
