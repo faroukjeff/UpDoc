@@ -1,7 +1,7 @@
 class AppointmentController < ApplicationController
     
     def appointment
-    @data = Appointment.where(:av => 'A')
+        @data = Appointment.where(:av => 'A')
     end
     
     def link_params
@@ -13,11 +13,12 @@ class AppointmentController < ApplicationController
         @docid = id["docid"]
         @tslot = id["slot"]
         @name = id["pname"]
+        @av='F'
         if Appointment.find_by(did: @docid, slot: @tslot).blank?
             flash[:notice] = "Invalid Doctor or Time Slot"
         else
             appt = Appointment.find_by(did: @docid, slot: @tslot)
-            appt.update(pid: @name, av: 'F')
+            appt.update(pid: @name, av: @av)
             flash[:notice] = "Appointment Confirmed"
         end
         

@@ -13,11 +13,11 @@ gem 'contact_us', '~> 1.0.1'
 # Use Puma as the app server
 gem 'jquery-rails'
 # Use SCSS for stylesheets
-gem 'sass-rails', '~> 5.0'
+gem 'sass-rails', '~> 5.0.3'
 gem 'haml'
 gem "haml-rails", "~> 1.0"
 # Use Uglifier as compressor for JavaScript assets
-gem 'uglifier', '>= 1.3.0'
+gem 'uglifier', '>= 2.7.1'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 # Use CoffeeScript for .coffee assets and views
@@ -40,7 +40,7 @@ group :development, :test do
   gem 'sqlite3'
   gem 'capybara'
   gem 'launchy'
-  gem 'rspec-rails'
+  gem 'rspec-rails', '3.3.2'
   gem 'guard-rspec'
   gem 'byebug'
 end

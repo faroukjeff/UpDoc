@@ -3,11 +3,13 @@ require 'rails_helper'
 RSpec.describe ProfileController, type: :controller do
 
   describe "view patient's medical history" do
+    let(:medrec1) {MedicalRecord.new(pnumber: "P0342567")}
     it "is successful" do
-      post :medicalrecords, {:pnumber => "P0342567"}
-      expect(assigns(:meddata))
-      expect(assigns(:medrdata))
-      expect(assigns(:medcheckbox))
+      allow(MedicalRecord).to receive(:where).with(pnumber: "P0342567").and_return(:mrec =>[medrec1])
+      get :medicalrecords, {:pnumber=>"P0342567"}
+      #expect(assigns(:meddata))
+      #expect(assigns(:medrdata))
+      #expect(assigns(:medcheckbox))
     end
   end
   
