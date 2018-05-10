@@ -3,26 +3,34 @@ require 'rails_helper'
 RSpec.describe ResetController, type: :controller do
 
   describe "clear appointments" do
-    let(:appointment1) {Appointment.new(pid: "Jeff@bin.com", av: 'F')}
-    let(:appointment2) {Appointment.new(pid: nil, av: 'A')}
-    it "is confirmed and successful" do
-      
-      allow(Appointment).to receive(:update_all).with(:pid=> nil, :av=> 'A')
-      post :reset, {:session => {:ver => "Y"} }
-      #expect(response).to redirect_to(admin_admin_path)
-      expect(Appointment.all[0]).to eq(:appts =>[appointment1])
-      #expect(flash[:notice]).to have_content("Reset Done!")
+ 
+    context "is confirmed and" do
+      let(:appointment1) {Appointment.new(pid: "Sue@oracle.com", did: "Aditya@bin.com", slot: "9:45", av: "F")}
+      let(:appointment2) {Appointment.new(pid: nil, did: "Aditya@bin.com", slot: "9:45", av: "A")}
+      it "updates the table" do
+        expect(Appointment).to receive(:update_all).with(:pid=>nil, :av=>'A')
+        post :reset, {:session => {ver: "Y"} }
+      end
+      it "reloads the page" do
+        allow(Appointment).to receive(:update_all).with(:pid=>nil, :av=>'A') 
+        post :reset, {:session => {ver: "Y"} }
+        expect(response).to redirect_to admin_admin_path
+      end
+      it "flashes a confirmation" do
+        allow(Appointment).to receive(:update_all).with(:pid=>nil, :av=>'A') 
+        post :reset, {:session => {ver: "Y"} }
+        expect(flash[:notice]).to have_content("Reset Done!")
+      end
     end
-    it "is cancelled" do
-      post :reset, {:session => {:ver => "n"} }
-      expect(response).to redirect_to(admin_admin_path)
-      #check that appointment is still intact
-      expect(Appointment.all[0].slot).to eq("9:45")
-      expect(Appointment.all[0].av).to eq("F")
-      expect(Appointment.all[0].pid).to eq("Sue@oracle.com")
-      expect(Appointment.all[0].did).to eq("Aditya@bin.com")
-      
-      expect(flash[:notice]).to have_content("Reset Aborted!")
+    context "is aborted and" do
+      it "reloads the page" do
+        post :reset, {:session => {ver: "N"} }
+        expect(response).to redirect_to admin_admin_path
+      end
+      it "flashes a notification" do
+        post :reset, {:session => {:ver => "n"} }
+        expect(flash[:notice]).to have_content("Reset Aborted!")
+      end
     end
   end
 

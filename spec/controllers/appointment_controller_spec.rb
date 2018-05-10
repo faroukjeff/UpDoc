@@ -23,21 +23,32 @@ RSpec.describe AppointmentController, type: :controller do
 
   describe "create appointment" do
     
-    context "is successful" do
-      let(:appointment1) {Appointment.new(did: 'Aditya@bin.com', slot: '9:00', pid: "Jeff@bin.com", av: 'F')}
-      it "Adds new appt" do
+    context "finds an open time slot and" do
+      before :each do
+        @emptyAppointment = double(:update => true)
+      end
+      #let(:appointment1) {Appointment.new(did: 'Aditya@bin.com', slot: '9:00', pid: nil, av: 'A')}
+      
+      it "makes the appointment" do
+        allow(Appointment).to receive(:find_by).with(did: "Aditya@bin.com", slot: "9:00").and_return(@emptyAppointment)
         post :confirm ,  {:session => {:docid => 'Aditya@bin.com', :slot => '9:00', :pname => "Jeff@bin.com"} }
-        allow(Appointment).to receive(:where).with(did: 'Aditya@bin.com', slot: '9:00', pid: "Jeff@bin.com", av: 'F').and_return(:appts =>[appointment1])
-        expect(assigns(:av)).to eq(appointment1["av"])
+        expect(assigns(:appt))#.to receive(:update)#.with(pid: "Jeff@bin.com", av: 'F').and_return(true)
       end
       it "redirects to login page" do
-        expect(response).to have_http_status(:success)
-      end
-      
-      it "is unsuccessful" do
-        post :confirm, {:session => {:docid => 'Aditya@bin.com', :slot => '10:00', :pname => "Jeff@bin.com"} }
+        post :confirm ,  {:session => {:docid => 'Aditya@bin.com', :slot => '9:00', :pname => "Jeff@bin.com"} }
         expect(response).to redirect_to(login_path)
       end
+      it "flashes a confirmation" do
+        allow(Appointment).to receive(:find_by).with(did: "Aditya@bin.com", slot: "9:00").and_return(@emptyAppointment)
+        post :confirm ,  {:session => {:docid => 'Aditya@bin.com', :slot => '9:00', :pname => "Jeff@bin.com"} }
+        expect(flash[:notice]).to have_content("Appointment Confirmed")
+      end
+    end
+      
+    it "is unsuccessful" do
+      allow(Appointment).to receive(:find_by).with(did: "Aditya@bin.com", slot: "10:00").and_return('')
+      post :confirm, {:session => {:docid => 'Aditya@bin.com', :slot => '10:00', :pname => "Jeff@bin.com"} }
+      expect(response).to redirect_to(login_path)
     end
   end
   

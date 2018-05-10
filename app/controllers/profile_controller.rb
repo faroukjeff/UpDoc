@@ -20,6 +20,7 @@ end
      id = params[:pnumber]
      
      @meddata = MedicalRecord.where(:pnumber=>id)
+     #byebug
      @medrdata = @meddata[0].medhistory.split(",")
      @medcheckbox = @meddata[0].meddata.split(",")
      #p @medrdata

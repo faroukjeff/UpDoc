@@ -27,6 +27,7 @@ class SessionsController < ApplicationController
           redirect_to login_path
         else
           data1 = data[0]
+          #byebug
           if(data1["usertype"] == "D")
             redirect_to profile_doctorprofile_path(:params1=> data1["username"])      
           else

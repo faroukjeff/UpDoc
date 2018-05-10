@@ -43,6 +43,8 @@ group :development, :test do
   gem 'rspec-rails', '3.3.2'
   gem 'guard-rspec'
   gem 'byebug'
+  gem 'factory_girl_rails'
+  gem 'ffaker'
 end
 
 group :test do
