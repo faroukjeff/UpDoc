@@ -7,10 +7,10 @@ Feature: find nearby hospitals
 Background: hospitals have been added to database
 
   Given the following hospitals exist:
-  | name                    | street              | city        |
-  | Lourd                   | Riverside Drive     | Binghamton  |
-  | Vestal Hospital         | Park                | Vestal      |
-  | University Hospital     | Vestal Parkway West | Binghamton  |
+  | name                    | street              | city        | hnumber |  pnumber |
+  | Lourd                   | Riverside Drive     | Binghamton  | 66      | 60745678 |
+  | Vestal Hospital         | Park                | Vestal      | 57      | 60745673 |
+  | University Hospital     | Vestal Parkway West | Binghamton  | 56      | 60745672 |
   
 Scenario: default
   When I am on the home page

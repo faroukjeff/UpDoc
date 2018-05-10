@@ -7,9 +7,9 @@ Feature: login
 Background: credentials have been added to database
 
   Given the following credentials exist:
-  | username          | password    |
-  | Jeff@bin.com      | Realmadrid1 |          
-  | Joe@bon.com       | Mufc19      |
+  | username          | password    | usertype |
+  | Jeff@bin.com      | Realmadrid1 |  P       |       
+  | Joe@bon.com       | Mufc19      |  P       |
  
 
    Given the following profiles exist:      

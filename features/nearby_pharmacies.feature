@@ -7,10 +7,10 @@ Feature: find nearby pharmacies
 Background: pharmacies have been added to database
 
   Given the following pharmacies exist:
-  | name                    | street              | city        |
-  | Ab Pharma               | Riverside Drive     | Binghamton  |
-  | Jeff PHY                | East drive          | Vestal      |
-  | University Pharmacy     | Vestal Parkway West | Binghamton  |
+  | name                    | street              | city        | hnumber |  pnumber |
+  | Ab Pharma               | Riverside Drive     | Binghamton  | 56      | 60789456 |
+  | Jeff PHY                | East drive          | Vestal      | 54      | 654897123|
+  | University Pharmacy     | Vestal Parkway West | Binghamton  | 78      | 65487922 |
   
 Scenario: default
   When I am on the home page
