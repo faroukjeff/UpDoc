@@ -3,7 +3,13 @@ UpDoc:
 
 Looking for platform where you can keep all your medical records and book an appointment with physician online?
  If so, then UpDoc is here to help you with that.
-
+ 
+ 
+Overview:
+1. One UpDoc a patient can sign-up to create a profile, where he can store his medical records and make an appointment with a doctor.
+2. There's a feature for doctor profile as well, where the doctor is able to keep track of his patients, view their profiles and also upcoming appointments.
+3. The Home page consists of information on nearby hospitals and pharmacies, Sign-up and Login links.
+3. The Admin of UpDoc has functionalities such as adding a doctor to system, linking a patient to doctor (many to one relation) and resetting the appointment table.
 
 
 Gems used
