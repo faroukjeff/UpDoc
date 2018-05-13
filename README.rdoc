@@ -43,6 +43,25 @@ ruby '2.3.4'
 'jquery-rails'
 'haml'
 
+Note: This project was made using cloud9.
+
+If You are setting a new workspace:
+
+(Create a new blank workspace in Cloud9)
+
+ 1-Select Ruby, and fill out the information
+
+ 2-Go to the Github page and copy the GitHub link into clipboard
+
+ 3-Type in the terminal "git clone <gitHub link>"
+
+ 4-Run the command "rvm install ruby 2.3.0" to install Ruby
+
+ 5-Run the command "gem install rails" to install Rails
+
+ 6-Run the command "bundle install" to install the bundle
+
+
 Steps to setup:
 
 1.	Fork and clone the project on your workspace using command git clone https://github.com/faroukjeff/UpDoc.git 
